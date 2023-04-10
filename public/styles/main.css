@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+main {
+    background: linear-gradient(to bottom, #131313, #562B81, #131313);
+    width: 100%;
+    padding: 5%;
+    height: auto;
+}
+
+.storm {
+    color: #FFE888;
+    text-shadow: 0 0 10px #ffd500;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ffd500;
+    }
+
+    to {
+        text-shadow: 0 0 20px #ffa600, 0 0 30px #ff6a00, 0 0 40px #ff2400, 0 0 70px #ff2400, 0 0 80px #ff2400, 0 0 100px #ff2400, 0 0 150px #ff2400;
+    }
+}
+
+
+.share {
+    color: white;
+}
