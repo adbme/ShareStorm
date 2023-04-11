@@ -11,11 +11,15 @@ header {
     width: 100%;
 }
 
+
+
+
 main {
     background: linear-gradient(to bottom, #131313, #562B81, #131313);
     width: 100%;
     padding: 5%;
-    height: auto;
+    height: 100vh;
+
 }
 
 .storm {
@@ -41,7 +45,6 @@ main {
 
 .container-test {
     width: 100%;
-
     background-color: #131313;
     padding: 60px;
 }

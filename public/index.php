@@ -4,6 +4,8 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+<script src="https://unpkg.com/scrollreveal"></script>
+
 
 <link rel="stylesheet" href="/styles/main.css">
 
@@ -56,17 +58,17 @@
 
 <div class="container-test">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 sr">
       <div class="d-flex align-items-center mb-3">
         <i class="fas fa-rocket fa-2x mr-3"></i>
-        <h1 class="mb-0" style="margin-left: 30px; font-size: 50px; color: white; display: flex; align-items: center; height: 140px;"> <div class="gs-div"><p class="gs">></p></div> Getting Started</h1>
+        <h1 class="mb-0" style="margin-left: 30px; font-size: 50px; color: white; display: flex; align-items: center; height: 130px;"> <div class="gs-div"><p class="gs">></p></div> Getting Started</h1>
       </div >
       <hr class="mb-5" style="height: 3px; background-color: white;">
     </div>
   </div>
 
   <div class="row">
-    <div class="col-lg-6 col-md-6 mb-4 ">
+    <div class="col-lg-6 col-md-6 mb-4 sr">
       <div class="card text-center bg-dark">
         <div class="card-body d-flex align-items-center justify-content-center  img-1 img-yellow">
           
@@ -74,7 +76,7 @@
       </div>
     </div>
 
-    <div class="col-lg-6 col-md-6 mb-4">
+    <div class="col-lg-6 col-md-6 mb-4 sr">
       <div class="card text-center bg-dark">
         <div class="card-body d-flex align-items-center justify-content-center img-2 ">
          
@@ -82,7 +84,7 @@
       </div>
     </div>
 
-    <div class="col-lg-6 col-md-6 mb-4">
+    <div class="col-lg-6 col-md-6 mb-4 sr">
       <div class="card text-center bg-dark">
         <div class="card-body d-flex align-items-center justify-content-center img-3 ">
           
@@ -90,7 +92,7 @@
       </div>
     </div>
     
-    <div class="col-lg-6 col-md-6 mb-4">
+    <div class="col-lg-6 col-md-6 mb-4 sr">
       <div class="card text-center bg-dark">
         <div class="card-body d-flex align-items-center justify-content-center img-4 ">
           
@@ -100,11 +102,17 @@
   </div>
   
   <div class="row">
-    <div class="col-12">
-      <hr class="mt-5">
+    <div class="col-12 sr">
+    <hr class="mb-5" style="height: 3px; background-color: white;">
     </div>
   </div>
 </div>
+
+
+<script>
+  ScrollReveal().reveal('.sr', { delay: 200, duration: 800, easing: 'cubic-bezier(0.5, 0, 0, 1)' });
+</script>
+
 
 
 
