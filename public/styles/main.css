@@ -30,7 +30,7 @@ main {
     }
 
     to {
-        text-shadow: 0 0 20px #ffa600, 0 0 30px #ff6a00, 0 0 40px #ff2400, 0 0 70px #ff2400, 0 0 80px #ff2400, 0 0 100px #ff2400, 0 0 150px #ff2400;
+        text-shadow: 0 0 20px #ffa600, 0 0 30px #ff6a00, 0 0 40px #ff2400, 0 0 70px #ff2400, 0 0 80px #ff2400, 0 0 100.0px #ff2400, 0 0 150px #ff2400;
     }
 }
 
@@ -42,7 +42,7 @@ main {
 .container-test {
     width: 100%;
 
-    background-color: white;
+    background-color: grey;
     padding: 60px;
 }
 
@@ -53,24 +53,96 @@ main {
 
 }
 
+.gs {
+    font-size: 100px;
+    color: #ff6a00;
+    margin-right: 40px;
+
+
+}
+
+.gs-div {
+    width: 80px;
+    height: 80px;
+    padding-left: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: solid 3px #562B81;
+}
+
+.img-yellow {
+    background-position: center center;
+    background-size: cover;
+    background-size: 130px;
+}
+
+.img-1 {
+    background: url("../images/calendar-white.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 130px;
+}
+
+.img-1:hover {
+    background: url("../images/calendar-yellow.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 130px;
+}
+
+
+.img-2 {
+    background: url("../images/liste-white.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 130px;
+}
+
+.img-2:hover {
+    background: url("../images/liste-yellow.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 130px;
+}
+
+
+.img-3 {
+    background: url("../images/notes-white.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 130px;
+}
+
+.img-3:hover {
+    background: url("../images/notes-yellow.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 130px;
+}
+
+
 .img-4 {
     background: url("../images/storm-white.svg") no-repeat;
     background-position: center center;
     background-size: cover;
-    background-size: 200px;
+    background-size: 130px;
 }
 
 .img-4:hover {
     background: url("../images/storm-yellow.svg") no-repeat;
     background-position: center center;
     background-size: cover;
-    background-size: 200px;
+    background-size: 130px;
 }
 
 
 
 .card {
     margin: 30px;
+    border-radius: 20px;
+    height: 300px;
 }
 
 hr {
