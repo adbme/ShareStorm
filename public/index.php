@@ -102,11 +102,14 @@
   </div>
   
   <div class="row">
-    <div class="col-12 sr">
+  <div class="col-12 sr">
     <hr class="mb-5" style="height: 3px; background-color: white;">
-    </div>
+    <p style="font-size: 20px; color: white;">Copyright © [2023] [pas de copyright mgl]. Tous droits réservés.</p>
   </div>
 </div>
+
+
+
 
 
 <script>
