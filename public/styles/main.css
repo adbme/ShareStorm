@@ -4,6 +4,13 @@
 
 }
 
+header {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
 main {
     background: linear-gradient(to bottom, #131313, #562B81, #131313);
     width: 100%;
@@ -30,4 +37,42 @@ main {
 
 .share {
     color: white;
+}
+
+.container-test {
+    width: 100%;
+
+    background-color: white;
+    padding: 60px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+
+}
+
+.img-4 {
+    background: url("../images/storm-white.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 200px;
+}
+
+.img-4:hover {
+    background: url("../images/storm-yellow.svg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-size: 200px;
+}
+
+
+
+.card {
+    margin: 30px;
+}
+
+hr {
+    height: 10px;
 }

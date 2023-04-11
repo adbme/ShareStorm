@@ -3,7 +3,38 @@
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
 <link rel="stylesheet" href="/styles/main.css">
+
+<header>
+  <div class="dropdown">
+    <button class="btn btn-transparent btn-dark opacity-100" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      <img class="img-flui" style="width: 70px" src="images/logo.svg" alt="logo">
+    </button>
+    
+    <ul class="dropdown-menu dropdown-menu-end animate__animated animate__fadeIn dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
+     
+      <li><a class="dropdown-item" href="#">
+      <img class="img-flui" style="width: 40px" src="images/calendar.svg" alt="logo">
+      </a></li>
+
+      <li><a class="dropdown-item" href="#">
+      <img class="img-flui" style="width: 40px" src="images/notes.svg" alt="logo">
+      </a></li>
+
+      <li><a class="dropdown-item" href="#">
+      <img class="img-flui" style="width: 40px" src="images/liste.svg" alt="logo">
+      </a></li>
+    </ul>
+  </div>
+</header>
+
+
+
+
+
+
 
 <main class="d-flex justify-content-center align-items-center">
   <div class="container">
@@ -19,8 +50,11 @@
         <h1 class="storm" style="font-size: 10vw;">STORM</h1>
       </div>
     </div>
-  </div>
+  </div>  
 </main>
+
+
+
 
 
 
