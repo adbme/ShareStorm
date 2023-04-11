@@ -42,7 +42,7 @@ main {
 .container-test {
     width: 100%;
 
-    background-color: grey;
+    background-color: #131313;
     padding: 60px;
 }
 
@@ -57,20 +57,67 @@ main {
     font-size: 100px;
     color: #ff6a00;
     margin-right: 40px;
-
-
 }
 
 .gs-div {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     padding-left: 45px;
+    margin-right: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    border: solid 3px #562B81;
+    border: solid 3px #131313;
+    box-shadow: 0 0 10px #ffd500;
+    position: relative;
+    animation: pulse 1s ease-in-out infinite;
 }
+
+.gs-div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: 0 0 10px #ffd500, 0 0 20px #ffd500, 0 0 30px #ffd500;
+    opacity: 0;
+    animation: fade 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+
 
 .img-yellow {
     background-position: center center;

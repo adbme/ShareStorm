@@ -59,7 +59,7 @@
     <div class="col-12">
       <div class="d-flex align-items-center mb-3">
         <i class="fas fa-rocket fa-2x mr-3"></i>
-        <h1 class="mb-0" style="margin-left: 30px; font-size: 50px; color: white; display: flex; align-items: center; height: 100px; background-color: red"> <div class="gs-div"><p class="gs">></p></div> Getting Started</h1>
+        <h1 class="mb-0" style="margin-left: 30px; font-size: 50px; color: white; display: flex; align-items: center; height: 140px;"> <div class="gs-div"><p class="gs">></p></div> Getting Started</h1>
       </div >
       <hr class="mb-5" style="height: 3px; background-color: white;">
     </div>
