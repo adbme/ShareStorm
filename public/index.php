@@ -135,8 +135,8 @@ function animateLogo() {
   </div>
 
   <div class="row">
-    <div class="col-lg-6 col-md-6 mb-4 sr">
-    <a href="pages/calendar.php"><div class="card text-center bg-dark">
+    <div class="col-lg-6 col-md-6 mb-4 sr" >
+    <a  href="pages/calendar.php"><div class="card text-center bg-dark">
         <div class="card-body d-flex align-items-center justify-content-center  img-1 img-yellow">
           
         </div>
@@ -222,8 +222,7 @@ function animateLogo() {
   });
 </script>
 
-
-
+<?php require "pages/chargement.php"?>
 
 
 <script src="scripts/index.js"></script>
