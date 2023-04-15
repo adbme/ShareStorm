@@ -195,8 +195,10 @@ function animateLogo() {
         <div class="modal-body">
           <ul>
             <li><kbd>m</kbd> : Menu</li>
-            <li><kbd>Ctrl</kbd> + <kbd>V</kbd> : Coller</li>
-            <li><kbd>Ctrl</kbd> + <kbd>X</kbd> : Couper</li>
+            <li><kbd>c</kbd> : Calendar</li>
+            <li><kbd>l</kbd> : List</li>
+            <li><kbd>n</kbd> : Notes</li>
+            <li><kbd>s</kbd> : Motiv-storms</li>
           </ul>
         </div>
       </div>
