@@ -39,12 +39,37 @@
         }
 	</style>
 	<script>
-		function redirection() {
+		function redirection1() {
 			// Afficher la pop-up de chargement
 			document.getElementById("overlay").style.display = "block";
 			setTimeout(function() {
 				window.location.href = "pages/calendar.php";
-			}, 3000); // 3 secondes
+			}, 300); // 3 secondes
+		}
+
+        function redirection2() {
+			// Afficher la pop-up de chargement
+			document.getElementById("overlay").style.display = "block";
+			setTimeout(function() {
+				window.location.href = "pages/liste.php";
+			}, 300); // 3 secondes
+		}
+
+
+        function redirection3() {
+			// Afficher la pop-up de chargement
+			document.getElementById("overlay").style.display = "block";
+			setTimeout(function() {
+				window.location.href = "pages/notes.php";
+			}, 300); // 3 secondes
+		}
+
+        function redirection4() {
+			// Afficher la pop-up de chargement
+			document.getElementById("overlay").style.display = "block";
+			setTimeout(function() {
+				window.location.href = "pages/motiv-storm.php";
+			}, 90); // 3 secondes
 		}
 	</script>
 </head>
