@@ -1,0 +1,1 @@
+<li class="glide__slide" style="background-color: pink;"><h2>Slide 6</h2></li>

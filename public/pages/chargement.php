@@ -11,10 +11,11 @@
 			display: none;
 		}
 
-		#overlay h2 {
+		#overlay h1 {
 			color: #fff;
 			text-align: center;
 			margin-top: 30%;
+			font-size: 100px
 		}
 
 		.spinner {
@@ -44,7 +45,7 @@
 			document.getElementById("overlay").style.display = "block";
 			setTimeout(function() {
 				window.location.href = "pages/calendar.php";
-			}, 300); // 3 secondes
+			}, 300); // secondes
 		}
 
         function redirection2() {
@@ -52,7 +53,7 @@
 			document.getElementById("overlay").style.display = "block";
 			setTimeout(function() {
 				window.location.href = "pages/liste.php";
-			}, 300); // 3 secondes
+			}, 300); // secondes
 		}
 
 
@@ -61,7 +62,7 @@
 			document.getElementById("overlay").style.display = "block";
 			setTimeout(function() {
 				window.location.href = "pages/notes.php";
-			}, 300); // 3 secondes
+			}, 300); // secondes
 		}
 
         function redirection4() {
@@ -69,7 +70,7 @@
 			document.getElementById("overlay").style.display = "block";
 			setTimeout(function() {
 				window.location.href = "pages/motiv-storm.php";
-			}, 90); // 3 secondes
+			}, 300); // secondes
 		}
 	</script>
 </head>
@@ -79,6 +80,6 @@
 	<!-- Pop-up de chargement -->
 	<div id="overlay">
 		<div class="spinner"></div>
-		<h2>Chargement en cours... </h2>
+		<h1>redirection !</h1>
         <!-- <img class="img-flui" id="img-calendar" style="width: 50vh;" src="images/calendar-yellow.svg" alt="logo"> -->
 	</div>

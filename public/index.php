@@ -18,6 +18,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml" >
+
+
+
+
+
 
 
 <link rel="stylesheet" href="/styles/main.css">
@@ -43,14 +49,6 @@
       <img class="img-flui" style="width: 40%" src="images/liste.svg" alt="logo">
       </a>
 </ul>
-
-      
-    
-
-
-
-    
-
   </div>
 </header>
 
@@ -94,7 +92,7 @@ $(document).ready(function(){
 });
 
 function animateLogo() {
-  $(".animated").animate({opacity: 0.5}, 1000).animate({opacity: 1}, 1000, animateLogo);
+  $(".animated").animate({opacity: 0.5}, 5000).animate({opacity: 1}, 1000, animateLogo);
 }
 </script>
 
@@ -161,7 +159,7 @@ function animateLogo() {
     </div>
     
     <div class="col-lg-6 col-md-6 mb-4 sr">
-    <a href="pages/calendar.php"><div class="card text-center bg-dark">
+    <a href="pages/motiv-storm.php"><div class="card text-center bg-dark">
         <div class="card-body d-flex align-items-center justify-content-center img-4 ">
           
         </div>
@@ -178,7 +176,7 @@ function animateLogo() {
 
 
 <!-- Bouton qui déclenche la pop-up -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="menu-shortcuts">
     Afficher les raccourcis
   </button>
 
@@ -186,8 +184,12 @@ function animateLogo() {
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header flex-footer">
+          
+        <div class="footer-div-shortcuts">
           <h4 class="modal-title" id="myModalLabel">Raccourcis clavier</h4>
+          <h5 class="modal-title h5-footer" id="myModalLabel">Afin de pouvoir naviguer entre les outils et pages de manière fluide et rapide, ShareStorm détient une série de raccourcis clavier toujours spécifier tout en bas de la page dans le footer.</h5>
+         </div>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -199,6 +201,7 @@ function animateLogo() {
             <li><kbd>l</kbd> : List</li>
             <li><kbd>n</kbd> : Notes</li>
             <li><kbd>s</kbd> : Motiv-storms</li>
+            <li><kbd>r</kbd> : Raccourcis</li>
           </ul>
         </div>
       </div>
@@ -224,8 +227,20 @@ function animateLogo() {
   });
 </script>
 
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'r') {
+      document.querySelector('#menu-shortcuts').click();
+    }
+  });
+</script>
+
 <?php require "pages/chargement.php"?>
 
+<script>$(document).ready(function() {
+    // Définir la position verticale de la barre de défilement de l'élément body à 0
+    $('body').scrollTop(0);
+  });</script>
 
 <script src="scripts/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
