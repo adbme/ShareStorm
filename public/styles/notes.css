@@ -127,6 +127,11 @@ button:hover {
     opacity: 1;
 }
 
+.sombre #categories {
+    color: white;
+}
+
+
 .lien::after {
     content: "Lien";
     display: block;

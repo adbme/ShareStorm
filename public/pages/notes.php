@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Deux boutons avec des pop-ups différentes</title>
     <!-- Inclure les fichiers CSS et JS de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
