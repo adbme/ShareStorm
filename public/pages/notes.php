@@ -1,155 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon réseau social</title>
+    <title>Deux boutons avec des pop-ups différentes</title>
+    <!-- Inclure les fichiers CSS et JS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../notes.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">Mon réseau social</div>
-        <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Mon profil</a></li>
-                <li><a href="#">Mes amis</a></li>
-                <li><a href="#">Notifications</a></li>
-                <li><a href="#">Paramètres</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="container">
-        <aside>
-            <h2>Bienvenue sur mon réseau social !</h2>
-            <ul>
-                <li><a href="#">Nouveautés</a></li>
-                <li><a href="#">Groupes</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Evénements</a></li>
-            </ul>
-        </aside>
+    <!-- Bouton pour ouvrir la deuxième pop-up -->
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#popup2">
+        Créer une catégorie
+    </button>
 
-        <main>
-            <div class="post-form">
-                <h3>Exprimez-vous !</h3>
-                <form>
-                    <textarea placeholder="Quoi de neuf ?"></textarea>
-                    <button type="submit">Publier</button>
-                </form>
-            </div>
-            <div class="post-list">
-                <div class="post">
-                    <div class="user">
-                        <img src="https://via.placeholder.com/50" alt="Photo de profil">
-                        <span>Nom d'utilisateur</span>
+    <!-- Bouton pour ouvrir la première pop-up -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup1">
+        Créer une note
+    </button>
+
+
+
+
+    <!-- Première pop-up -->
+    <div class="modal fade" id="popup2" tabindex="-1" role="dialog" aria-labelledby="popup2Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+
+
+                    <div id="categories">
+                        <h2>Créer une catégorie</h2>
+                        <div>
+                            <label for="nom-categorie">Nom de catégorie :</label>
+                            <input type="text" id="nom-categorie" name="nom-categorie" required>
+                            <label for="couleur-categorie">Couleur :</label>
+                            <input type="color" id="couleur-categorie" name="couleur-categorie">
+                            <button onclick="creerCategorie()">Créer la catégorie</button>
+                        </div>
                     </div>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut libero eu tortor hendrerit eleifend. Proin a mi massa.</p>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="user">
-                        <img src="https://via.placeholder.com/50" alt="Photo de profil">
-                        <span>Nom d'utilisateur</span>
-                    </div>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut libero eu tortor hendrerit eleifend. Proin a mi massa.</p>
-                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 
-    <footer>
-        <p>Mon réseau social © 2023</p>
-    </footer>
 
-<style>
-    /* Styles pour le header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #222;
-  color: #fff;
-}
 
-header h1 {
-  font-size: 24px;
-  margin: 0;
-}
 
-header nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
-header nav li {
-  margin-right: 20px;
-}
+    <!-- Deuxième -->
+    <div class="modal fade" id="popup1" tabindex="-1" role="dialog" aria-labelledby="popup1Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
 
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-}
 
-/* Styles pour le contenu principal */
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
-}
 
-.card {
-  width: 30%;
-  margin-bottom: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
 
-.card h2 {
-  font-size: 24px;
-  margin: 20px;
-}
-
-.card p {
-  margin: 0 20px 20px;
-}
-
-/* Styles pour le footer */
-footer {
-  padding: 10px 20px;
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-}
-
-footer p {
-  margin: 0;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-</style>
+                    <div id="liens">
+                        <h2>Ajouter une div avec lien</h2>
+                        <div>
+                            <label for="nom">Nom :</label>
+                            <input type="text" id="nom" name="nom" required>
+                            <label for="lien">Lien :</label>
+                            <input type="text" id="lien" name="lien" required>
+                            <label for="categorie">Catégorie :</label>
+                            <select id="categorie" name="categorie">
+                                <option value="">Choisir une catégorie</option>
+                            </select>
+                            <label for="image">Image :</label>
+                            <input type="file" id="image" name="image">
+                            <button onclick="ajouterDiv()">Ajouter</button>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
+
+
+<div id="container"></div>
+
+<script>
+    function creerCategorie() {
+        var nomCategorie = document.getElementById("nom-categorie").value.trim();
+        var couleurCategorie = document.getElementById("couleur-categorie").value;
+
+        // Vérification que le champ nom de catégorie est rempli
+        if (nomCategorie === "") {
+            alert("Le champ nom de catégorie est obligatoire.");
+            return;
+        }
+
+        // Vérification que le nom de catégorie n'existe pas déjà
+        var categories = document.getElementsByClassName("categorie");
+        for (var i = 0; i < categories.length; i++) {
+            if (categories[i].getAttribute("data-nom-categorie") === nomCategorie) {
+                alert("Une catégorie avec ce nom existe déjà.");
+                return;
+            }
+        }
+
+        // Création de la catégorie
+        var categorie = document.createElement("div");
+        categorie.className = "categorie";
+        categorie.setAttribute("data-nom-categorie", nomCategorie);
+        categorie.style.backgroundColor = couleurCategorie;
+        categorie.style.marginTop = "10px";
+        categorie.style.padding = "10px";
+        categorie.style.cursor = "pointer";
+        categorie.innerHTML = "<h3>" + nomCategorie + "</h3>";
+        document.getElementById("container").appendChild(categorie);
+
+        // Ajout de la catégorie à la liste des choix dans la sélection
+        var option = document.createElement("option");
+        option.value = nomCategorie;
+        option.innerHTML = nomCategorie;
+        document.getElementById("categorie").appendChild(option);
+    }
+
+    function ajouterDiv() {
+        var nom = document.getElementById("nom").value;
+        var lien = document.getElementById("lien").value;
+        var categorie = document.getElementById("categorie").value;
+        var image = document.getElementById("image").files[0];
+
+        // Vérification que le champ nom et le champ lien sont remplis
+        if (nom === "" || lien === "") {
+            alert("Le champ nom et le champ lien sont obligatoires.");
+            return;
+        }
+
+        // Vérification que la catégorie est sélectionnée
+        if (categorie === "") {
+            alert("Veuillez sélectionner une catégorie.");
+            return;
+        }
+
+        // Récupération de la catégorie correspondante
+        var container = document.querySelector('[data-nom-categorie="' + categorie + '"]');
+
+        // Création de la div contenant le lien
+        var div = document.createElement("div");
+        div.innerHTML = "<h2>" + nom + "</h2>";
+        div.addEventListener("click", function () {
+            window.open(lien);
+        });
+
+        // Si une image a été ajoutée, on l'inclut dans la div
+        if (image) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var img = document.createElement("img");
+                img.src = e.target.result;
+                div.insertBefore(img, div.firstChild);
+            }
+            reader.readAsDataURL(image);
+        }
+
+        container.appendChild(div);
+    }
+
+</script>
