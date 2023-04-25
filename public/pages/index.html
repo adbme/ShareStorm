@@ -7,10 +7,73 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../styles/notes.css">
-
     <style>
-       
+        .button-menu {
+            height: 100px;
+            margin-top: 0vh;
+            margin-left: -20px;
+            background-color: #1E1E1E;
+            border: solid 2px yellow;
+        }
+
+        .button2-menu {
+            position: absolute;
+            height: 100px;
+            margin-top: -9px;
+            margin-right: -200px;
+            background-color: #1E1E1E;
+            border: solid 2px yellow;
+        }
+
+
+        #sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #1E1E1E;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        #sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: yellow;
+        }
+
+        #sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+
+        @media screen and (max-height: 450px) {
+            #sidebar {
+                padding-top: 15px;
+            }
+
+            #sidebar a {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -30,10 +93,13 @@
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
 
-                    <?php require "Navbar.php"
-                    ?>
-                
-
+                    <button class="btn btn-warning">
+                        <span class="mx-auto">Texte au centre</span>
+                        <span class="float-right">
+                            <span class="fa fa-star fa-2x"></span>
+                        </span>
+                    </button>
+                    <i class="fa-solid fa-basketball-hoop"></i>
                 </div>
             </div>
             <div class="col-md-10">
