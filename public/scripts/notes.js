@@ -23,7 +23,7 @@ function creerCategorie() {
     categorie.style.padding = "10px";
     categorie.style.cursor = "pointer";
     categorie.innerHTML = "<h3>" + nomCategorie + "</h3>";
-    document.getElementById("container").appendChild(categorie);
+    document.querySelector("main").appendChild(categorie);
     // Ajout de la catégorie à la liste des choix dans la sélection
     var option = document.createElement("option");
     option.value = nomCategorie;
@@ -63,7 +63,7 @@ function ajouterDiv() {
         }
         reader.readAsDataURL(image);
     }
-    container.appendChild(div);
+    document.querySelector("main").appendChild(div);
 }
 
 
