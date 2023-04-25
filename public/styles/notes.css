@@ -68,6 +68,10 @@ input[type="file"] {
     font-size: 20px;
 }
 
+.modal-backdrop {
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+}
 
 .lien {
     flex-basis: calc(50% - 10px);
