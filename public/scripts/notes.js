@@ -63,7 +63,7 @@ function ajouterDiv() {
         }
         reader.readAsDataURL(image);
     }
-    document.querySelector("main").appendChild(div);
+    container.appendChild(div);
 }
 
 
