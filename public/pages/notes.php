@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/notes.css">
 
     <style>
-       
+
     </style>
 </head>
 
@@ -31,21 +31,25 @@
                     <a href="#">Link 3</a>
 
                     <?php require "notes-tools/button-system.php"
-                    ?>
-                
+                        ?>
+
 
                 </div>
             </div>
 
-        <main id="main">
-            <div class="col-md-10">
-                <div >
-                    <h1>Créez d'abbord vos catégories et ajoutez y ensuite vos notes</h1>
-                    <p>Jouez avec les couleurs de vos dossiers, customisez les widget de vos notes avec les les images
-                        de votre choiix, basculer aussi sur un thème de site qui vous va le mieux !</p>
+            <main id="main">
+                <div class="col-md-10">
+                    <div class="arrow-container">
+                        <div class="arrow"></div>
+                        <h1>Créez d'abord vos catégories et ajoutez-y ensuite vos notes</h1>
+                    </div>
+                    <p>Jouez avec les couleurs de vos dossiers, customisez les widget de vos notes avec les images de
+                        votre choix, basculez aussi sur un thème de site qui vous va le mieux !</p>
                 </div>
-            </div>
-        </main>
+            </main>
+
+
+
 
         </div>
     </div>

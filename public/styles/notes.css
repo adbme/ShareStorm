@@ -147,6 +147,7 @@ img {
 }
 
 .button2-menu {
+    z-index: 2;
     font-size: 20px;
     position: absolute;
     height: 120px;
@@ -202,5 +203,37 @@ img {
 
     #sidebar a {
         font-size: 18px;
+    }
+}
+
+.arrow-container {
+    position: relative;
+    display: inline-block;
+}
+
+.arrow {
+    position: absolute;
+    top: 26px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #ffd500;
+    transform: translateY(-50%);
+    animation: arrow-blink 1s infinite;
+}
+
+@keyframes arrow-blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
