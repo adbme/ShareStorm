@@ -22,13 +22,14 @@ function creerCategorie() {
     categorie.style.marginTop = "10px";
     categorie.style.padding = "10px";
     categorie.style.cursor = "pointer";
-    categorie.innerHTML = "<h3>" + nomCategorie + "</h3>";
+    categorie.innerHTML = "<h2>" + nomCategorie + "</h2>";
 
     // Création de la barre
     var barre = document.createElement("div");
     barre.style.height = "3px";
     barre.style.borderRadius = "30px";
     barre.style.backgroundColor = "#262529";
+    barre.style.marginBottom = "20px"
     categorie.appendChild(barre);
 
     document.querySelector("main").appendChild(categorie);
@@ -59,6 +60,14 @@ function ajouterDiv() {
     // Création de la div contenant le lien
     var div = document.createElement("div");
     div.innerHTML = "<h2>" + nom + "</h2>";
+    div.style.backgroundColor = "blue";
+    div.style.display = "flex"
+    div.style.padding = "2%";
+    div.style.height = "30%";
+    div.style.width = "20%";
+    div.style.borderRadius = "6px";
+    div.style.flexDirection = "column-reverse"
+    div.style.width = "30%";
     div.addEventListener("click", function () {
         window.open(lien);
     });
