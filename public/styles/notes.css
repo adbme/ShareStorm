@@ -1,4 +1,4 @@
-body {
+* {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -152,10 +152,8 @@ img {
     position: absolute;
     height: 120px;
     margin-top: -9px;
-    margin-right: -200px;
     background-color: #0066cc;
 }
-
 
 #sidebar {
     height: 100%;
@@ -191,10 +189,22 @@ img {
     margin-left: 50px;
 }
 
-#main {
-    transition: margin-left .5s;
+main {
+    transition: margin-right .5s;
     padding: 20px;
+    height: 600px;
+
 }
+
+@media screen and (max-width: 1520px) {
+    main {
+        margin-top: -120px;
+        margin-left: 12%;
+
+    }
+}
+
+
 
 @media screen and (max-height: 450px) {
     #sidebar {
