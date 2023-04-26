@@ -62,8 +62,8 @@
 
         function closeNav() {
             document.getElementById("sidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            document.getElementById("main").style.marginTop = "0";
+            document.getElementById("main").style.marginLeft = "10%";
+            document.getElementById("main").style.marginTop = "-120";
             // document.getElementById("main").style.marginLeft = "12%";
         }
     </script>

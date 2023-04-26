@@ -193,10 +193,12 @@ main {
     transition: margin-right .5s;
     padding: 20px;
     height: 600px;
-
+    width: 100%;
+    margin-top: -120px;
+    margin-left: 10%;
 }
 
-@media screen and (max-width: 1520px) {
+@media screen and (max-width: 1700px) {
     main {
         margin-top: -120px;
         margin-left: 12%;
