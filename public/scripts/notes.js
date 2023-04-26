@@ -23,6 +23,14 @@ function creerCategorie() {
     categorie.style.padding = "10px";
     categorie.style.cursor = "pointer";
     categorie.innerHTML = "<h3>" + nomCategorie + "</h3>";
+
+    // Création de la barre
+    var barre = document.createElement("div");
+    barre.style.height = "3px";
+    barre.style.borderRadius = "30px";
+    barre.style.backgroundColor = "#262529";
+    categorie.appendChild(barre);
+
     document.querySelector("main").appendChild(categorie);
     // Ajout de la catégorie à la liste des choix dans la sélection
     var option = document.createElement("option");
@@ -30,6 +38,7 @@ function creerCategorie() {
     option.innerHTML = nomCategorie;
     document.getElementById("categorie").appendChild(option);
 }
+
 function ajouterDiv() {
     var nom = document.getElementById("nom").value;
     var lien = document.getElementById("lien").value;
