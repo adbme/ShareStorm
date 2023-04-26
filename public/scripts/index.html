@@ -1,0 +1,41 @@
+<style>
+    .scrollable {
+      width: 500px; /* largeur de la div */
+      height: 200px; /* hauteur de la div */
+      overflow-x: scroll; /* permet l'affichage de la barre de défilement horizontale */
+      white-space: nowrap; /* empêche le retour à la ligne automatique */
+    }
+    
+    .scrollable > div {
+      display: inline-block; /* éléments contenus dans la div affichés en ligne */
+      width: 100px; /* largeur de chaque élément */
+      height: 150px; /* hauteur de chaque élément */
+      margin-right: 10px; /* espace entre les éléments */
+      background-color: gray; /* couleur de fond des éléments */
+    }
+  </style>
+  
+  <div class="scrollable">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  
+  <script>
+    var scrollableDiv = document.querySelector(".scrollable");
+    
+    // événement pour permettre de faire défiler avec la souris
+    scrollableDiv.addEventListener("mousemove", function (event) {
+      var delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+      scrollableDiv.scrollLeft -= (delta * 40); // vitesse du défilement
+      event.preventDefault(); // empêche le défilement vertical par défaut
+    }, false);
+  </script>
+  
