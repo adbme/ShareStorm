@@ -60,7 +60,17 @@ function ajouterDiv() {
     // Création de la div contenant le lien
     var div = document.createElement("div");
     div.innerHTML = "<h2>" + nom + "</h2>";
-    div.style.backgroundColor = "blue";
+    if (image) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            div.style.backgroundImage = "url('" + e.target.result + "')";
+
+        }
+        reader.readAsDataURL(image);
+    } else {
+        div.style.backgroundColor = "#2D2930";
+    }
+
     div.style.display = "flex"
     div.style.padding = "2%";
     div.style.height = "30%";
