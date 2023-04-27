@@ -206,6 +206,12 @@ div.categorie {
     border: #1E1E1E;
     display: flex;
     align-items: center;
+    transition: 0.3s;
+}
+
+.button-notes:hover {
+    transform: scale(1.1);
+
 }
 
 .icon-button {
