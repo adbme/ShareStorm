@@ -51,7 +51,6 @@ input[type="file"] {
     margin-bottom: 20px;
     border-radius: 5px;
     padding: 10px;
-    cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 }
 
@@ -75,7 +74,7 @@ input[type="file"] {
     margin-bottom: 20px;
     border-radius: 5px;
     padding: 10px;
-    cursor: pointer;
+
     transition: background-color 0.2s ease-in-out;
     position: relative;
 }
@@ -209,6 +208,7 @@ div.categorie::-webkit-scrollbar-thumb {
 div.categorie::-webkit-scrollbar-thumb:hover {
     background-color: #999999;
 }
+
 
 
 main {
