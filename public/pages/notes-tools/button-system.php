@@ -4,14 +4,17 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../styles/notes.css">
 
-<!-- Bouton pour ouvrir la deuxième pop-up -->
-<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#popup2">
-    Créer une catégorie
-</button>
-<!-- Bouton pour ouvrir la première pop-up -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup1">
-    Créer une note
-</button>
+<div class="buttondiv">
+    <!-- Bouton pour ouvrir la deuxième pop-up -->
+    <button type="button" class="button-notes button-createNotes" data-toggle="modal" data-target="#popup2">
+        NEW CATEGORYS
+    </button>
+    <!-- Bouton pour ouvrir la première pop-up -->
+    <button type="button" class="button-notes button-createCathegory" data-toggle="modal" data-target="#popup1">
+        NEW NOTES
+    </button>
+</div>
+
 <!-- Créer une catégorie -->
 <div class="modal fade" id="popup2" tabindex="-1" role="dialog" aria-labelledby="popup2Label" aria-hidden="true">
     <div class="modal-dialog" role="document">

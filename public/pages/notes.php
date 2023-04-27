@@ -26,14 +26,14 @@
                             < </button>
 
                     </a>
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+
 
                     <?php require "notes-tools/button-system.php"
                         ?>
 
-
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
                 </div>
             </div>
 
@@ -43,7 +43,8 @@
                         <div class="arrow"></div>
                         <h1 class="h1-notes">Créez d'abord vos catégories et ajoutez-y ensuite vos notes</h1>
                     </div>
-                    <p class="p-notes">Jouez avec les couleurs de vos dossiers, customisez les widget de vos notes avec les images de
+                    <p class="p-notes">Jouez avec les couleurs de vos dossiers, customisez les widget de vos notes avec
+                        les images de
                         votre choix, basculez aussi sur un thème de site qui vous va le mieux !</p>
                 </div>
             </main>
