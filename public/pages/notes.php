@@ -8,6 +8,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../styles/notes.css">
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+
 
     <style>
 
@@ -28,14 +30,21 @@
                     </a>
 
 
-                    <?php require "notes-tools/button-system.php"
+                    <?php require "tools/button-system.php"
                         ?>
 
                     <a href="#">Link 1</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
+
+
+
+
+
                 </div>
+
             </div>
+
 
             <main id="main">
                 <div class="col-md-10">

@@ -177,7 +177,7 @@ img {
 }
 
 #sidebar a:hover {
-    color: yellow;
+    color: #FFE888;
 }
 
 #sidebar .closebtn {
@@ -191,8 +191,7 @@ img {
 div.categorie {
     width: 100%;
     cursor: help;
-    overflow-x: scroll;
-    white-space: nowrap;
+
 }
 
 .button-notes {
@@ -262,19 +261,7 @@ div.categorie {
     font-weight: 400;
 }
 
-div.categorie::-webkit-scrollbar {
-    height: 8px;
-    background-color: #F5F5F5;
-}
 
-div.categorie::-webkit-scrollbar-thumb {
-    background-color: #AAA;
-    border-radius: 5px;
-}
-
-div.categorie::-webkit-scrollbar-thumb:hover {
-    background-color: #999999;
-}
 
 
 
