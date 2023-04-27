@@ -41,9 +41,9 @@
                 <div class="col-md-10">
                     <div class="arrow-container">
                         <div class="arrow"></div>
-                        <h1>Créez d'abord vos catégories et ajoutez-y ensuite vos notes</h1>
+                        <h1 class="h1-notes">Créez d'abord vos catégories et ajoutez-y ensuite vos notes</h1>
                     </div>
-                    <p>Jouez avec les couleurs de vos dossiers, customisez les widget de vos notes avec les images de
+                    <p class="p-notes">Jouez avec les couleurs de vos dossiers, customisez les widget de vos notes avec les images de
                         votre choix, basculez aussi sur un thème de site qui vous va le mieux !</p>
                 </div>
             </main>

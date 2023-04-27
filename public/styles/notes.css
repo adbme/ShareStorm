@@ -195,6 +195,16 @@ div.categorie {
     white-space: nowrap;
 }
 
+.h1-notes {
+    color: #d6d6d6;
+    font-weight: 400;
+}
+
+.p-notes {
+    color: #b5b5b5;
+    font-weight: 400;
+}
+
 div.categorie::-webkit-scrollbar {
     height: 8px;
     background-color: #F5F5F5;
