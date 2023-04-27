@@ -80,7 +80,42 @@ function ajouterDiv() {
     div.style.borderRadius = "6px";
     div.style.flexDirection = "column-reverse"
     div.style.width = "30%";
-    
+
+
+    function updateStyles() {
+        const width = window.innerWidth;
+
+        // Si la fenêtre est suffisamment large
+        if (width > 992) {
+            div.style.width = '30%';
+            div.style.marginLeft = '2%';
+            div.style.marginTop = '2%';
+            div.style.flex = '0 0 calc(30% - 4% - 2% - 2% - 2px)';
+        }
+        // Si la fenêtre est moyennement large
+        else if (width <= 992 && width > 768) {
+            div.style.width = '45%';
+            div.style.marginLeft = '2.5%';
+            div.style.marginTop = '2.5%';
+            div.style.flex = '0 0 calc(45% - 5% - 2.5% - 2.5% - 2px)';
+        }
+        // Si la fenêtre est plus étroite
+        else {
+            div.style.width = '100%';
+            div.style.marginLeft = '0';
+            div.style.marginTop = '5%';
+            div.style.flex = '0 0 calc(100% - 0 - 0 - 5% - 2px)';
+        }
+    }
+
+    // Mettre à jour les styles initiaux
+    updateStyles();
+
+    // Ajouter un écouteur d'événements pour la taille de la fenêtre
+    window.addEventListener('resize', updateStyles);
+
+
+
     div.addEventListener("click", function () {
         window.open(lien);
     });
