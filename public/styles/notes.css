@@ -202,7 +202,7 @@ div.categorie {
     width: 90%;
     height: 7vh;
     border-radius: 17px;
-    margin-top: 4%;
+    margin-top: 20px;
     border: #1E1E1E;
     display: flex;
     align-items: center;
@@ -210,6 +210,27 @@ div.categorie {
 
 .icon-button {
     width: 40%;
+}
+
+@media (max-width: 750px) {
+    .button-notes {
+        font-size: 0;
+        width: 100%;
+    }
+
+    .button-notes {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button-notes .icon-button {
+        display: block;
+    }
+
+    .buttondiv {
+        padding: 10%;
+    }
+
 }
 
 .buttondiv {
