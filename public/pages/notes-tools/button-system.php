@@ -7,11 +7,11 @@
 <div class="buttondiv">
     <!-- Bouton pour ouvrir la deuxième pop-up -->
     <button type="button" class="button-notes button-createNotes" data-toggle="modal" data-target="#popup2">
-        NEW CATEGORYS
+        <img src="../images/new-category.svg" class="icon-button" alt=""> NEW CATEGORYS
     </button>
     <!-- Bouton pour ouvrir la première pop-up -->
     <button type="button" class="button-notes button-createCathegory" data-toggle="modal" data-target="#popup1">
-        NEW NOTES
+        <img src="../images/new-note.svg" class="icon-button" alt=""> NEW NOTES
     </button>
 </div>
 

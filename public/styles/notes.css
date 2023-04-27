@@ -204,6 +204,12 @@ div.categorie {
     border-radius: 17px;
     margin-top: 4%;
     border: #1E1E1E;
+    display: flex;
+    align-items: center;
+}
+
+.icon-button {
+    width: 40%;
 }
 
 .buttondiv {
