@@ -17,11 +17,11 @@ function creerCategorie() {
     // Création de la catégorie
     var categorie = document.createElement("div");
     categorie.className = "categorie";
+    categorie.id = "DivCategorie"
     categorie.setAttribute("data-nom-categorie", nomCategorie);
     categorie.style.backgroundColor = couleurCategorie;
     categorie.style.marginTop = "10px";
     categorie.style.padding = "10px";
-    categorie.style.cursor = "pointer";
     categorie.innerHTML = "<h2>" + nomCategorie + "</h2>";
 
 
@@ -57,15 +57,16 @@ function ajouterDiv() {
         return;
     }
     // Récupération de la catégorie correspondante
-    var container = document.querySelector('[data-nom-categorie="' + categorie + '"]');
+    var container = document.getElementById("DivCategorie")
+
     // Création de la div contenant le lien
     var div = document.createElement("div");
+    div.className = "DivLiens"
     div.innerHTML = "<h2>" + nom + "</h2>";
     if (image) {
         var reader = new FileReader();
         reader.onload = function (e) {
             div.style.backgroundImage = "url('" + e.target.result + "')";
-
         }
         reader.readAsDataURL(image);
     } else {
@@ -115,8 +116,6 @@ function ajouterDiv() {
     // Ajouter un écouteur d'événements pour la taille de la fenêtre
     window.addEventListener('resize', updateStyles);
 
-
-
     div.addEventListener("click", function () {
         window.open(lien);
     });
@@ -127,15 +126,17 @@ function ajouterDiv() {
             var img = document.createElement("img");
             img.src = e.target.result;
             div.insertBefore(img, div.firstChild);
+
         }
         reader.readAsDataURL(image);
     }
     container.appendChild(div);
+
 }
 
 
 function previewImage() {
-    var preview = document.getElementById('img3');
+    var preview = document.getElementById('imgPreview');
     var file = document.querySelector('input[type=file]').files[0];
     var reader = new FileReader();
 

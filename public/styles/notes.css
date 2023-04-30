@@ -190,9 +190,9 @@ img {
 
 div.categorie {
     width: 100%;
-    cursor: help;
-
 }
+
+
 
 .button-notes {
     background-color: #FFE888;
@@ -329,5 +329,3 @@ body {
         opacity: 0;
     }
 }
-
-
