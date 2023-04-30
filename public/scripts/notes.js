@@ -24,6 +24,7 @@ function creerCategorie() {
     categorie.style.cursor = "pointer";
     categorie.innerHTML = "<h2>" + nomCategorie + "</h2>";
 
+
     // Création de la barre
     var barre = document.createElement("div");
     barre.style.height = "3px";
@@ -134,7 +135,7 @@ function ajouterDiv() {
 
 
 function previewImage() {
-    var preview = document.querySelector('img');
+    var preview = document.getElementById('img3');
     var file = document.querySelector('input[type=file]').files[0];
     var reader = new FileReader();
 

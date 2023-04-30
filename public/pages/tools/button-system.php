@@ -58,7 +58,7 @@
                         <label for="image">Image :</label>
                         <input type="file" id="image" name="image" onchange="previewImage()">
                         <!--apercu de l'image upload -->
-                        <img src="" alt="Aperçu de l'image" style="max-width: 100%;">
+                        <img src="" alt="Aperçu de l'image" id="img3" style="max-width: 100%;">
                         <button onclick="ajouterDiv()">Ajouter</button>
                     </div>
                 </div>
