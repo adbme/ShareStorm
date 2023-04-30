@@ -75,17 +75,17 @@ function ajouterDiv() {
         div.style.backgroundColor = "#2D2930";
     }
 
-    // div.style.display = "flex"
-    // div.style.flexDirection = "column-reverse"
-    // div.style.padding = "2%";
-    // div.style.height = "30%";
-    // div.style.float = "none";
-    // div.style.display = "inline-block";
-    // div.style.marginLeft = "2%"
-    // div.style.marginTop = "2%"
-    // div.style.borderRadius = "6px";
+    div.style.display = "flex"
+    div.style.flexDirection = "column-reverse"
+    div.style.padding = "2%";
+    div.style.height = "30%";
+    div.style.float = "none";
+    div.style.display = "inline-block";
+    div.style.marginLeft = "2%"
+    div.style.marginTop = "2%"
+    div.style.borderRadius = "6px";
 
-    // div.style.width = "30%";
+    div.style.width = "30%";
 
 
     function updateStyles() {
