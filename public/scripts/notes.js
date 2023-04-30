@@ -22,7 +22,9 @@ function creerCategorie() {
     categorie.style.backgroundColor = couleurCategorie;
     categorie.style.marginTop = "10px";
     categorie.style.padding = "10px";
+    categorie.style.opacity = "0.5";
     categorie.innerHTML = "<h2>" + nomCategorie + "</h2>";
+
 
 
     // Création de la barre
@@ -57,7 +59,7 @@ function ajouterDiv() {
         return;
     }
     // Récupération de la catégorie correspondante
-    var container = document.getElementById("DivCategorie")
+    var container = document.querySelector('[data-nom-categorie="' + categorie + '"]');
 
     // Création de la div contenant le lien
     var div = document.createElement("div");
@@ -73,16 +75,17 @@ function ajouterDiv() {
         div.style.backgroundColor = "#2D2930";
     }
 
-    div.style.display = "flex"
-    div.style.padding = "2%";
-    div.style.height = "30%";
-    div.style.float = "none";
-    div.style.display = "inline-block";
-    div.style.marginLeft = "2%"
-    div.style.marginTop = "2%"
-    div.style.borderRadius = "6px";
-    div.style.flexDirection = "column-reverse"
-    div.style.width = "30%";
+    // div.style.display = "flex"
+    // div.style.flexDirection = "column-reverse"
+    // div.style.padding = "2%";
+    // div.style.height = "30%";
+    // div.style.float = "none";
+    // div.style.display = "inline-block";
+    // div.style.marginLeft = "2%"
+    // div.style.marginTop = "2%"
+    // div.style.borderRadius = "6px";
+
+    // div.style.width = "30%";
 
 
     function updateStyles() {
