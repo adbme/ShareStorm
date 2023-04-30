@@ -76,7 +76,7 @@ function ajouterDiv() {
     div.style.display = "flex"
     div.style.padding = "2%";
     div.style.height = "30%";
-    div.style.float = "left"
+    // div.style.float = "left"
     div.style.marginLeft = "2%"
     div.style.marginTop = "2%"
     div.style.borderRadius = "6px";
@@ -150,6 +150,3 @@ function previewImage() {
         preview.src = "";
     }
 }
-
-
-

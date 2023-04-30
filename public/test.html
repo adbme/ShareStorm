@@ -1,61 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <style>
-        .top-div {
-            height: 500px;
-            background-color: gray;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .bottom-div {
-            height: 500px;
-            background-color: lightgray;
-            opacity: 0;
-            visibility: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.5s ease-in-out;
-        }
-
-        .bottom-div.show {
-            opacity: 1;
-            visibility: visible;
-        }
-    </style>
+    <!-- Inclure les fichiers CSS et JS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="top-div">
-        <h1>Welcome to my website</h1>
+    <!-- Bouton pour ouvrir la deuxième pop-up -->
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#popup2">
+        Créer une catégorie
+    </button>
+    <!-- Bouton pour ouvrir la première pop-up -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popup1">
+        Créer une note
+    </button>
+    <!-- Créer une catégorie -->
+    <div class="modal fade" id="popup2" tabindex="-1" role="dialog" aria-labelledby="popup2Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="categories">
+                        <h2>Créer une catégorie</h2>
+                        <div>
+                            <label for="nom-categorie">Nom de catégorie :</label>
+                            <input type="text" id="nom-categorie" name="nom-categorie" required>
+                            <label for="couleur-categorie">Couleur :</label>
+                            <input type="color" id="couleur-categorie" name="couleur-categorie">
+                            <button onclick="creerCategorie()">Créer la catégorie</button>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="bottom-div">
-        <h2>Scroll down for more</h2>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-    <script>
-        window.addEventListener("scroll", function () {
-            var bottomDiv = document.querySelector(".bottom-div");
-            var bottomDivPosition = bottomDiv.getBoundingClientRect().top;
-            var screenHeight = window.innerHeight;
-            if (bottomDivPosition < screenHeight) {
-                bottomDiv.classList.add("show");
-            }
-        });
-    </script>
+    <!-- Créer une note -->
+    <div class="modal fade" id="popup1" tabindex="-1" role="dialog" aria-labelledby="popup1Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="liens">
+                        <h2>Ajouter une div avec lien</h2>
+                        <div>
+                            <label for="nom">Nom :</label>
+                            <input type="text" id="nom" name="nom" required>
+                            <label for="lien">Lien :</label>
+                            <input type="text" id="lien" name="lien" required>
+                            <label for="categorie">Catégorie :</label>
+                            <select id="categorie" name="categorie">
+                                <option value="">Choisir une catégorie</option>
+                            </select>
+                            <label for="image">Image :</label>
+                            <input type="file" id="image" name="image" onchange="previewImage()">
+                            <!--apercu de l'image upload -->
+                            <img src="" alt="Aperçu de l'image" style="max-width: 100%;">
+                            <button onclick="ajouterDiv()">Ajouter</button>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
+<div id="container"></div>
+<script>
+    function creerCategorie() {
+        var nomCategorie = document.getElementById("nom-categorie").value.trim();
+        var couleurCategorie = document.getElementById("couleur-categorie").value;
+        // Vérification que le champ nom de catégorie est rempli
+        if (nomCategorie === "") {
+            alert("Le champ nom de catégorie est obligatoire.");
+            return;
+        }
+        // Vérification que le nom de catégorie n'existe pas déjà
+        var categories = document.getElementsByClassName("categorie");
+        for (var i = 0; i < categories.length; i++) {
+            if (categories[i].getAttribute("data-nom-categorie") === nomCategorie) {
+                alert("Une catégorie avec ce nom existe déjà.");
+                return;
+            }
+        }
+        // Création de la catégorie
+        var categorie = document.createElement("div");
+        categorie.className = "categorie";
+        categorie.setAttribute("data-nom-categorie", nomCategorie);
+        categorie.style.backgroundColor = couleurCategorie;
+        categorie.style.marginTop = "10px";
+        categorie.style.padding = "10px";
+        categorie.style.cursor = "pointer";
+        categorie.innerHTML = "<h3>" + nomCategorie + "</h3>";
+        document.getElementById("container").appendChild(categorie);
+        // Ajout de la catégorie à la liste des choix dans la sélection
+        var option = document.createElement("option");
+        option.value = nomCategorie;
+        option.innerHTML = nomCategorie;
+        document.getElementById("categorie").appendChild(option);
+    }
+    function ajouterDiv() {
+        var nom = document.getElementById("nom").value;
+        var lien = document.getElementById("lien").value;
+        var categorie = document.getElementById("categorie").value;
+        var image = document.getElementById("image").files[0];
+        // Vérification que le champ nom et le champ lien sont remplis
+        if (nom === "" || lien === "") {
+            alert("Le champ nom et le champ lien sont obligatoires.");
+            return;
+        }
+        // Vérification que la catégorie est sélectionnée
+        if (categorie === "") {
+            alert("Veuillez sélectionner une catégorie.");
+            return;
+        }
+        // Récupération de la catégorie correspondante
+        var container = document.querySelector('[data-nom-categorie="' + categorie + '"]');
+        // Création de la div contenant le lien
+        var div = document.createElement("div");
+        div.innerHTML = "<h2>" + nom + "</h2>";
+        div.addEventListener("click", function () {
+            window.open(lien);
+        });
+        // Si une image a été ajoutée, on l'inclut dans la div
+        if (image) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var img = document.createElement("img");
+                img.src = e.target.result;
+                div.insertBefore(img, div.firstChild);
+            }
+            reader.readAsDataURL(image);
+        }
+        container.appendChild(div);
+    }
+</script>
+
+<!-- script pour afficher l'image dans l'upload -->
+<script>
+    function previewImage() {
+        var preview = document.querySelector('img');
+        var file = document.querySelector('input[type=file]').files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    }
+</script>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/sharestom.png);
+}
+
+
+
+#categories,
+#liens {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+h2 {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select,
+input[type="color"],
+input[type="file"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+
+input[type="file"] {
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0052a3;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.categorie {
+    flex-basis: 30%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.categorie:hover {
+    background-color: #eee;
+}
+
+.categorie h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.lien {
+    flex-basis: calc(50% - 10px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    position: relative;
+}
+
+.lien:hover {
+    background-color: #eee;
+}
+
+.lien h2 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.lien img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.lien::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.lien:hover::before {
+    opacity: 1;
+}
+
+.sombre #categories {
+    color: white;
+}
+
+
+.lien::after {
+    content: "Lien";
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 16px;
+    z-index: 2;
+}
+
+img {
+    width: 100%;
+    height: 40%;
+}
+</style>
