@@ -22,6 +22,16 @@ function creerCategorie() {
     categorie.style.backgroundColor = couleurCategorie;
     categorie.style.marginTop = "10px";
     categorie.style.padding = "10px";
+    categorie.style.opacity = "0.5";
+    categorie.style.transition = "0.5s";
+
+    categorie.addEventListener("mouseover", function () {
+        categorie.style.opacity = "0.7";
+    });
+
+    categorie.addEventListener("mouseout", function () {
+        categorie.style.opacity = "0.5";
+    });
     categorie.innerHTML = "<h2>" + nomCategorie + "</h2>";
 
 
@@ -83,7 +93,7 @@ function ajouterDiv() {
     // div.style.marginLeft = "2%"
     // div.style.marginTop = "2%"
     div.style.borderRadius = "10px";
-    // div.style.filter = "blur(30px)"
+
 
     div.style.width = "30%";
 
