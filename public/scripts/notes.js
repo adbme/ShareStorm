@@ -22,7 +22,6 @@ function creerCategorie() {
     categorie.style.backgroundColor = couleurCategorie;
     categorie.style.marginTop = "10px";
     categorie.style.padding = "10px";
-    categorie.style.opacity = "0.5";
     categorie.innerHTML = "<h2>" + nomCategorie + "</h2>";
 
 
@@ -64,7 +63,7 @@ function ajouterDiv() {
     // Création de la div contenant le lien
     var div = document.createElement("div");
     div.className = "DivLiens"
-    div.innerHTML = "<h2>" + nom + "</h2>";
+    div.innerHTML = "<h2 class='title-div-links'>" + nom + "</h2>";
     if (image) {
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -76,14 +75,15 @@ function ajouterDiv() {
     }
 
     div.style.display = "flex"
-    div.style.flexDirection = "column-reverse"
+
     div.style.padding = "2%";
     div.style.height = "30%";
     div.style.float = "none";
     div.style.display = "inline-block";
-    div.style.marginLeft = "2%"
-    div.style.marginTop = "2%"
-    div.style.borderRadius = "6px";
+    // div.style.marginLeft = "2%"
+    // div.style.marginTop = "2%"
+    div.style.borderRadius = "10px";
+    // div.style.filter = "blur(30px)"
 
     div.style.width = "30%";
 
@@ -94,8 +94,9 @@ function ajouterDiv() {
         // Si la fenêtre est suffisamment large
         if (width > 992) {
             div.style.width = '30%';
-            div.style.marginLeft = '2%';
-            div.style.marginTop = '2%';
+            div.style.marginLeft = '3%';
+            div.style.marginTop = '3%';
+            div.style.marginBottom = '3%';
             div.style.flex = '0 0 calc(30% - 4% - 2% - 2% - 2px)';
         }
         // Si la fenêtre est moyennement large

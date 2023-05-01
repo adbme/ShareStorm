@@ -80,12 +80,24 @@ input[type="file"] {
 }
 
 .DivLiens {
-    display: flex;
-    flex-direction: column-reverse;
+    transition: 0.5s;
 }
+
+.DivLiens:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
 
 .lien:hover {
     background-color: #eee;
+}
+
+.title-div-links {
+    background-color: #0066cc;
+    color: #000000;
+
 }
 
 .lien h2 {
