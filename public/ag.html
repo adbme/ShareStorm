@@ -1,0 +1,123 @@
+<div class="container">
+
+
+    <div class="tasks-container">
+        <h2>MES TACHES</h2>
+
+        <ul class="task-list">
+            <!-- <li><input type="checkbox" class="task-checkbox"><span class="task-title">Tâche 1</span></li>
+            <li><input type="checkbox" class="task-checkbox"><span class="task-title">Tâche 2</span></li>
+            <li><input type="checkbox" class="task-checkbox"><span class="task-title">Tâche 3</span></li> -->
+        </ul>
+        <div class="add-task">
+            <input type="text" placeholder="Ajouter une nouvelle tâche">
+            <button>Ajouter</button>
+        </div>
+    </div>
+
+    <h2 id="h2Count"></h2>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+
+</div>
+<style>
+    * {}
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .progress-bar-container {
+        height: 20px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background-color: #4CAF50;
+        width: 0;
+        transition: width 0.5s ease-in-out;
+    }
+
+    .task-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .task-list li {
+        margin-bottom: 10px;
+    }
+
+    .task-checkbox {
+        margin-right: 10px;
+    }
+
+    .add-task input[type="text"] {
+        padding: 5px;
+        width: 70%;
+        margin-right: 10px;
+    }
+
+    .add-task button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .add-task button:hover {
+        background-color: #3e8e41;
+    }
+</style>
+<script>
+    const taskCheckboxes = document.querySelectorAll('.task-checkbox');
+    const progressBar = document.querySelector('.progress-bar');
+    const addTaskButton = document.querySelector('.add-task button');
+    const taskCount = document.querySelector('#h2Count');
+
+    // Met à jour la barre de progression en fonction du nombre de cases à cocher cochées
+    function updateProgressBar() {
+        const checkboxes = document.querySelectorAll('.task-checkbox');
+        const checkedCount = Array.from(checkboxes).filter((checkbox) => checkbox.checked).length;
+        const progressPercent = (checkedCount / checkboxes.length) * 100;
+
+        progressBar.style.width = `${progressPercent}%`;
+
+        // Met à jour le compteur de tâches
+        taskCount.textContent = `${checkedCount}/${checkboxes.length}`;
+    }
+
+    // Utilise la délégation d'événements pour gérer les clics sur les cases à cocher
+    const taskList = document.querySelector('.task-list');
+    taskList.addEventListener('click', function (event) {
+        const target = event.target;
+
+        if (target.classList.contains('task-checkbox')) {
+            updateProgressBar();
+        }
+    });
+
+    // Gère l'ajout de nouvelles tâches
+    addTaskButton.addEventListener('click', function () {
+        const newTaskInput = document.querySelector('.add-task input[type="text"]');
+        const newTaskTitle = newTaskInput.value;
+
+        if (newTaskTitle.trim() !== '') {
+            const newTask = document.createElement('li');
+            newTask.innerHTML = `<input type="checkbox" class="task-checkbox"><span class="task-title">${newTaskTitle}</span>`;
+            taskList.appendChild(newTask);
+
+            // Réinitialise l'input de nouvelle tâche
+            newTaskInput.value = '';
+
+            // Met à jour la barre de progression et le compteur de tâches
+            updateProgressBar();
+        }
+    });
+
+</script>

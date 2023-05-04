@@ -17,39 +17,48 @@ function creerCategorie() {
     // Création de la catégorie
     var categorie = document.createElement("div");
     categorie.className = "categorie";
-    categorie.id = "DivCategorie"
+    categorie.id = "DivCategorie";
     categorie.setAttribute("data-nom-categorie", nomCategorie);
     categorie.style.backgroundColor = couleurCategorie;
     categorie.style.marginTop = "10px";
     categorie.style.padding = "10px";
     categorie.style.opacity = "0.5";
     categorie.style.transition = "0.5s";
+    categorie.style.color = "#E0E0E0";
 
-    categorie.addEventListener("mouseover", function () {
-        categorie.style.opacity = "0.7";
+    categorie.addEventListener("mouseenter", function () { // changement de "mouseover" à "mouseenter"
+        categorie.style.color = "#FFE888";
+        categorie.style.opacity = "1";
+        categorie.style.backgroundColor = "#1E1E1E"; // la couleur change
+        barre.style.backgroundColor = "#FFE888";
     });
 
-    categorie.addEventListener("mouseout", function () {
+    categorie.addEventListener("mouseleave", function () { // changement de "mouseout" à "mouseleave"
         categorie.style.opacity = "0.5";
+        categorie.style.color = "#E0E0E0";
+        categorie.style.backgroundColor = couleurCategorie; // la couleur est restaurée
+        barre.style.backgroundColor = "#E0E0E0";
     });
+
     categorie.innerHTML = "<h2>" + nomCategorie + "</h2>";
-
-
 
     // Création de la barre
     var barre = document.createElement("div");
     barre.style.height = "3px";
     barre.style.borderRadius = "30px";
-    barre.style.backgroundColor = "#262529";
+    barre.style.backgroundColor = "#E0E0E0";
     barre.style.marginBottom = "20px"
+    barre.style.transition = "0.5s";
     categorie.appendChild(barre);
 
     document.querySelector("main").appendChild(categorie);
+
     // Ajout de la catégorie à la liste des choix dans la sélection
     var option = document.createElement("option");
     option.value = nomCategorie;
     option.innerHTML = nomCategorie;
     document.getElementById("categorie").appendChild(option);
+
 }
 
 function ajouterDiv() {

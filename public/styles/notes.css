@@ -52,15 +52,12 @@ input[type="file"] {
     border-radius: 5px;
     padding: 10px;
     transition: background-color 0.2s ease-in-out;
+
 }
 
-.categorie:hover {
-    background-color: #eee;
-}
 
 .categorie h3 {
     margin-top: 0;
-    font-size: 20px;
 }
 
 .modal-backdrop {
@@ -81,6 +78,7 @@ input[type="file"] {
 
 .DivLiens {
     transition: 0.5s;
+
 }
 
 .DivLiens:hover {
@@ -209,7 +207,9 @@ img {
 
 div.categorie {
     width: 100%;
+
 }
+
 
 
 
