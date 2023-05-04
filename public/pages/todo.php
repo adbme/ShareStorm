@@ -52,7 +52,16 @@
                             <ul class="task-list colorW">
                                 <!-- taches -->
 
-                                <li><input type="checkbox" class="task-checkbox"><span class="task-title">Tâche 2</span>
+                                <li><input id="1" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
+                                        1</span>
+                                </li>
+
+                                <li><input id="2" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
+                                        2</span>
+                                </li>
+
+                                <li><input id="3" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
+                                        2</span>
                                 </li>
                             </ul>
                             <div class="add-task">
