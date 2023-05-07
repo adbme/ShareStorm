@@ -139,3 +139,19 @@ function deleteCheckedTasks() {
     save();
 }
 
+
+
+// Fonction pour supprimer toutes les cases cochées
+function checkAllTasks() {
+    let checkboxes = document.querySelectorAll('.task-checkbox');
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = true;
+    });
+}
+
+function confirmCheck() {
+    if (confirm("Êtes-vous sûr de vouloir cocher toutes les tâches ?")) {
+
+        checkAllTasks();
+    }
+}
