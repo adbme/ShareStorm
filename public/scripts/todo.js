@@ -118,3 +118,15 @@ function save() {
 
 // Charge les tâches depuis le stockage local lors du chargement de la page
 load();
+
+// Fonction pour supprimer toutes les cases cochées
+function deleteCheckedTasks() {
+    const checkedTasks = document.querySelectorAll('.task-checkbox:checked');
+    checkedTasks.forEach((task) => {
+      const taskItem = task.parentElement;
+      taskItem.remove();
+    });
+    updateProgressBar();
+    save();
+  }
+  

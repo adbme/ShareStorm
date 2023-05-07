@@ -22,6 +22,7 @@
             <div class="col-md-2">
                 <button class="btn btn-primary button-menu" onclick="openNav()">></button>
                 <div id="sidebar">
+                    <button onclick="deleteCheckedTasks()">delete checked tasks</button>
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
 
                         <button class="btn btn-primary button2-menu" onclick="closeNav()">
@@ -49,7 +50,7 @@
                     <div class="tasks-container">
                         <h2 class="colorW">MES TACHES</h2>
 
-                        <ul class="task-list colorW">
+                        <ul class="task-list colorW top">
                             <!-- taches -->
                             <!-- 
                             <li><input id="1" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
@@ -64,16 +65,17 @@
                                     2</span>
                             </li> -->
                         </ul>
-                        <div class="add-task">
+                        <div class="add-task top">
                             <input type="text" placeholder="Ajouter une nouvelle tâche">
                             <button>Ajouter</button>
                         </div>
                     </div>
 
-                    <h5 class="colorW" id="h2Count"></h5>
+                    <h5 class="colorW top" id="h2Count"></h5>
                     <div class="progress-bar-container">
                         <div class="progress-bar"></div>
                     </div>
+
 
                 </div>
 

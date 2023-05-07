@@ -10,7 +10,10 @@
     margin-top: 0vh;
     margin-left: -20px;
     background-color: #0066cc;
+
 }
+
+
 
 .button2-menu {
     z-index: 2;
@@ -143,6 +146,10 @@ body {
     transition: 0.3s;
 }
 
+.top {
+    margin-top: 2%;
+}
+
 .add-task button:hover {
     background-color: #FFE888;
     transform: scale(1.1);
@@ -162,5 +169,5 @@ body {
     float: right;
     width: 30px;
     height: 30px;
-    
+
 }
