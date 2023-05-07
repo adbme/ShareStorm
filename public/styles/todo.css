@@ -53,6 +53,7 @@
 
 
 main {
+
     transition: margin-right .5s;
     padding: 20px;
     height: 600px;
@@ -88,8 +89,14 @@ body {
 
 /* Todo */
 .container {
-    max-width: 600px;
+
     margin: 0 auto;
+    background-color: #0066cc;
+    border-radius: 20px;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 
 .progress-bar-container {

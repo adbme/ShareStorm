@@ -22,7 +22,6 @@ taskList.addEventListener('click', function (event) {
 
     if (target.classList.contains('task-checkbox')) {
         updateProgressBar();
-        save();
     }
 });
 
@@ -33,17 +32,7 @@ addTaskButton.addEventListener('click', function () {
 
     if (newTaskTitle.trim() !== '') {
         const newTask = document.createElement('li');
-        const newTaskCheckbox = document.createElement('input');
-        const newTaskTitleSpan = document.createElement('span');
-
-        newTaskCheckbox.type = 'checkbox';
-        newTaskCheckbox.classList.add('task-checkbox');
-        newTaskTitleSpan.classList.add('task-title');
-        newTaskTitleSpan.textContent = newTaskTitle;
-
-        newTask.appendChild(newTaskCheckbox);
-        newTask.appendChild(newTaskTitleSpan);
-
+        newTask.innerHTML = `<input type="checkbox" class="task-checkbox"><span class="task-title">${newTaskTitle}</span>`;
         taskList.appendChild(newTask);
 
         // Réinitialise l'input de nouvelle tâche
@@ -51,35 +40,26 @@ addTaskButton.addEventListener('click', function () {
 
         // Met à jour la barre de progression et le compteur de tâches
         updateProgressBar();
-        save();
     }
 });
 
-// Sauvegarde l'état des cases à cocher dans le localStorage
+
+// localstorage system
+
+let boxes = document.getElementsByClassName('task-checkbox').length;
+
 function save() {
-    const checkboxes = document.querySelectorAll('.task-checkbox');
-
-    for (let i = 0; i < checkboxes.length; i++) {
-        localStorage.setItem(`task-${i}`, checkboxes[i].checked);
+    for (let i = 1; i <= boxes; i++) {
+        var checkbox = document.getElementById(String(i));
+        localStorage.setItem("checkbox" + String(i), checkbox.checked);
     }
 }
 
-// Charge l'état des cases à cocher depuis le localStorage
-function load() {
-    const checkboxes = document.querySelectorAll('.task-checkbox');
-
-    for (let i = 0; i < checkboxes.length; i++) {
-        const checkbox = checkboxes[i];
-        const checked = JSON.parse(localStorage.getItem(`task-${i}`));
-
-        if (checked !== null) {
-            checkbox.checked = checked;
-        }
+//for loading
+for (let i = 1; i <= boxes; i++) {
+    if (localStorage.length > 0) {
+        var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
+        document.getElementById(String(i)).checked = checked;
     }
 }
-
-// Charge l'état des cases à cocher au chargement de la page
-load();
-
-// Met à jour la barre de progression et le compteur de tâches au chargement de la page
-updateProgressBar();
+window.addEventListener('change', save);

@@ -42,41 +42,41 @@
 
 
             <main id="main">
-                <div class="col-md-10">
-                    <div class="container">
+                <div class="col-md-10 container">
 
 
-                        <div class="tasks-container">
-                            <h2 class="colorW">MES TACHES</h2>
 
-                            <ul class="task-list colorW">
-                                <!-- taches -->
+                    <div class="tasks-container">
+                        <h2 class="colorW">MES TACHES</h2>
 
-                                <li><input id="1" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
-                                        1</span>
-                                </li>
+                        <ul class="task-list colorW">
+                            <!-- taches -->
 
-                                <li><input id="2" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
-                                        2</span>
-                                </li>
+                            <li><input id="1" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
+                                    1</span>
+                            </li>
 
-                                <li><input id="3" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
-                                        2</span>
-                                </li>
-                            </ul>
-                            <div class="add-task">
-                                <input type="text" placeholder="Ajouter une nouvelle tâche">
-                                <button>Ajouter</button>
-                            </div>
+                            <li><input id="2" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
+                                    2</span>
+                            </li>
+
+                            <li><input id="3" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
+                                    2</span>
+                            </li>
+                        </ul>
+                        <div class="add-task">
+                            <input type="text" placeholder="Ajouter une nouvelle tâche">
+                            <button>Ajouter</button>
                         </div>
-
-                        <h5 class="colorW" id="h2Count"></h5>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar"></div>
-                        </div>
-
                     </div>
+
+                    <h5 class="colorW" id="h2Count"></h5>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
+
                 </div>
+
             </main>
 
 
