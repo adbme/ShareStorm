@@ -51,7 +51,7 @@
 
                         <ul class="task-list colorW">
                             <!-- taches -->
-
+                            <!-- 
                             <li><input id="1" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
                                     1</span>
                             </li>
@@ -62,7 +62,7 @@
 
                             <li><input id="3" type="checkbox" class="task-checkbox"><span class="task-title">Tâche
                                     2</span>
-                            </li>
+                            </li> -->
                         </ul>
                         <div class="add-task">
                             <input type="text" placeholder="Ajouter une nouvelle tâche">
