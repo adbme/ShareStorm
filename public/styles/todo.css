@@ -91,7 +91,7 @@ body {
 .container {
 
     margin: 0 auto;
-    background-color: #0066cc;
+    background-color: #17151A;
     border-radius: 20px;
     padding-left: 6%;
     padding-right: 6%;
@@ -136,16 +136,31 @@ body {
 
 .add-task button {
     padding: 5px 10px;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #FFE888;
+    color: #000000;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .add-task button:hover {
-    background-color: #3e8e41;
+    background-color: #FFE888;
+    transform: scale(1.1);
 }
 
 .colorW {
     color: white;
+}
+
+.delete-button {
+    color: #29252D;
+    background-color: #29252D;
+    background-image: url("../images/delete2.svg");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 50%;
+    float: right;
+    width: 30px;
+    height: 30px;
+    
 }

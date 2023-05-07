@@ -15,12 +15,17 @@ function updateProgressBar() {
     taskCount.textContent = `${checkedCount}/${checkboxes.length}`;
 }
 
-// Utilise la délégation d'événements pour gérer les clics sur les cases à cocher
+// Utilise la délégation d'événements pour gérer les clics sur les cases à cocher et les boutons "Supprimer"
 const taskList = document.querySelector('.task-list');
 taskList.addEventListener('click', function (event) {
     const target = event.target;
 
     if (target.classList.contains('task-checkbox')) {
+        updateProgressBar();
+        save();
+    } else if (target.classList.contains('delete-button')) {
+        const taskItem = target.parentElement;
+        taskItem.remove();
         updateProgressBar();
         save();
     }
@@ -35,6 +40,7 @@ addTaskButton.addEventListener('click', function () {
         const newTask = document.createElement('li');
         const newTaskCheckbox = document.createElement('input');
         const newTaskTitleSpan = document.createElement('span');
+        const newTaskDeleteButton = document.createElement('button');
 
         // Trouve le nombre de tâches déjà créées pour définir l'ID de la nouvelle tâche
         const taskCount = document.querySelectorAll('.task-list li').length;
@@ -44,9 +50,12 @@ addTaskButton.addEventListener('click', function () {
         newTaskCheckbox.classList.add('task-checkbox');
         newTaskTitleSpan.classList.add('task-title');
         newTaskTitleSpan.textContent = newTaskTitle;
+        newTaskDeleteButton.classList.add('delete-button');
+        newTaskDeleteButton.textContent = '';
 
         newTask.appendChild(newTaskCheckbox);
         newTask.appendChild(newTaskTitleSpan);
+        newTask.appendChild(newTaskDeleteButton);
 
         taskList.appendChild(newTask);
 
@@ -70,6 +79,7 @@ function load() {
             const newTask = document.createElement('li');
             const newTaskCheckbox = document.createElement('input');
             const newTaskTitleSpan = document.createElement('span');
+            const newTaskDeleteButton = document.createElement('button');
 
             newTaskCheckbox.id = index + 1;
             newTaskCheckbox.type = 'checkbox';
@@ -77,34 +87,34 @@ function load() {
             newTaskCheckbox.checked = task.completed;
             newTaskTitleSpan.classList.add('task-title');
             newTaskTitleSpan.textContent = task.title;
+            newTaskDeleteButton.classList.add('delete-button');
+            newTaskDeleteButton.textContent = '';
 
             newTask.appendChild(newTaskCheckbox);
             newTask.appendChild(newTaskTitleSpan);
+            newTask.appendChild(newTaskDeleteButton);
 
             taskList.appendChild(newTask);
         }
 
+        // Met à jour la barre de progression
         updateProgressBar();
     }
 }
 
 // Enregistre les tâches dans le stockage local
 function save() {
-    const tasks = [];
+    const tasks = []; for (const taskItem of taskList.children) {
+        const taskCheckbox = taskItem.querySelector('.task-checkbox');
+        const taskTitle = taskItem.querySelector('.task-title').textContent;
+        const taskCompleted = taskCheckbox.checked;
 
-    for (const taskElement of document.querySelectorAll('.task-list li')) {
-        const taskCheckbox = taskElement.querySelector('.task-checkbox');
-        const taskTitle = taskElement.querySelector('.task-title');
-
-        tasks.push({
-            title: taskTitle.textContent,
-            completed: taskCheckbox.checked,
-        });
+        tasks.push({ title: taskTitle, completed: taskCompleted });
     }
 
-    localStorage.setItem
-        ('tasks', JSON.stringify(tasks));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
 }
 
-// Appelle la fonction load() pour charger les tâches depuis le stockage local au chargement de la page
+// Charge les tâches depuis le stockage local lors du chargement de la page
 load();
