@@ -294,7 +294,7 @@ main {
 }
 
 body {
-    background-image: url("../images/sharestom.png");
+    background-color: #29252D;
 }
 
 @media screen and (max-width: 1700px) {
