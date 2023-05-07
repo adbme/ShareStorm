@@ -119,14 +119,23 @@ function save() {
 // Charge les tâches depuis le stockage local lors du chargement de la page
 load();
 
+function confirmDelete() {
+    if (confirm("Êtes-vous sûr de vouloir supprimer toutes les tâches finies ?")) {
+        // si l'utilisateur clique sur "OK" dans la boîte de dialogue de confirmation,
+        // appelez la fonction "deleteCheckedTasks()"
+        deleteCheckedTasks();
+    }
+}
+
+
 // Fonction pour supprimer toutes les cases cochées
 function deleteCheckedTasks() {
     const checkedTasks = document.querySelectorAll('.task-checkbox:checked');
     checkedTasks.forEach((task) => {
-      const taskItem = task.parentElement;
-      taskItem.remove();
+        const taskItem = task.parentElement;
+        taskItem.remove();
     });
     updateProgressBar();
     save();
-  }
-  
+}
+

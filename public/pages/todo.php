@@ -22,7 +22,8 @@
             <div class="col-md-2">
                 <button class="btn btn-primary button-menu" onclick="openNav()">></button>
                 <div id="sidebar">
-                    <button onclick="deleteCheckedTasks()">delete checked tasks</button>
+                    <button onclick="confirmDelete()">delete checked tasks</button>
+
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
 
                         <button class="btn btn-primary button2-menu" onclick="closeNav()">
