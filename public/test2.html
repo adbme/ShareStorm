@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload et affichage d'une photo depuis un lien</title>
+</head>
+
+<body>
+    <h1>Upload et affichage d'une photo depuis un lien</h1>
+    <form>
+        <label for="photoLink">Lien de l'image :</label>
+        <input type="text" id="photoLink">
+        <button type="button" onclick="upload()">Upload</button>
+    </form>
+    <img id="photoPreview">
+    <script>
+        function upload() {
+            var linkInput = document.getElementById("photoLink");
+            var preview = document.getElementById("photoPreview");
+            var link = linkInput.value;
+            fetch(link)
+                .then(response => response.blob())
+                .then(blob => {
+                    var objectUrl = URL.createObjectURL(blob);
+                    preview.src = objectUrl;
+                })
+                .catch(error => console.error(error));
+        }
+    </script>
+</body>
+
+</html>

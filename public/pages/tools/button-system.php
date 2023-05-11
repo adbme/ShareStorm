@@ -57,9 +57,32 @@
                         </select>
                         <label for="image">Image :</label>
                         <input type="file" id="image" name="image" onchange="previewImage()">
+
+                        <label for="photoLink">Lien de l'image :</label>
+                        <input type="text" id="photoLink">
+                        <button type="button" onclick="upload()">Upload</button>
+
                         <!--apercu de l'image upload -->
                         <img src="" alt="Aperçu de l'image" id="imgPreview" style="max-width: 100%;">
+
+                        <img id="photoPreview">
                         <button onclick="ajouterDiv()">Ajouter</button>
+                        <script>
+                            function upload() {
+                                var linkInput = document.getElementById("photoLink");
+                                var preview = document.getElementById("photoPreview");
+                                var link = linkInput.value;
+                                fetch(link)
+                                    .then(response => response.blob())
+                                    .then(blob => {
+                                        var objectUrl = URL.createObjectURL(blob);
+                                        preview.src = objectUrl;
+                                    })
+                                    .catch(error => console.error(error));
+                            }
+                        </script>
+
+
                     </div>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -69,6 +92,7 @@
         </div>
     </div>
 </div>
+
 
 
 <div id="container"></div>
