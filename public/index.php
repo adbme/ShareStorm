@@ -151,7 +151,7 @@
     </div>
 
     <div class="col-lg-6 col-md-6 mb-4 sr">
-      <a href="pages/calendar.php">
+      <a href="pages/todo.php">
         <div class="card text-center bg-dark">
 
           <div class="card-body d-flex align-items-center justify-content-center img-2 ">
@@ -162,7 +162,7 @@
     </div>
 
     <div class="col-lg-6 col-md-6 mb-4 sr">
-      <a href="pages/calendar.php">
+      <a href="pages/notes.php">
         <div class="card text-center bg-dark">
           <div class="card-body d-flex align-items-center justify-content-center img-3 ">
 

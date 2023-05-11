@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+
+    <style>
+        [data-tab-content] {
+            display: none;
+        }
+
+        .active[data-tab-content] {
+            display: block;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid black;
+            overflow-x: scroll;
+            white-space: nowrap;
+        }
+
+
+        @media screen and (max-width: 500px) {
+            .tabs {
+                display: block;
+                overflow: none;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                max-height: 190px;
+            }
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .tab.active {
+            background-color: #ccc;
+        }
+
+        .tab:hover {
+            background-color: #aaa;
+        }
+
+        .tab-content {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        #add-tab {
+            position: fixed;
+
+        }
+
+        li.tabs {}
+    </style>
+</head>
+
+<body>
+    <ul class="tabs">
+        <li data-tab-target="#home" class="active tab">Catégorie 1</li>
+        <li data-tab-target="#pricing" class="tab">Catégorie 2</li>
+        <li data-tab-target="#about" class="tab">Catégorie 3</li>
+        <li data-tab-target="#news" class="tab">Catégorie 4</li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" data-tab-content class="active">
+            <h1>Home</h1>
+            <p>This is the home</p>
+        </div>
+        <div id="pricing" data-tab-content>
+            <h1>Pricing</h1>
+            <p>Some information on pricing</p>
+        </div>
+        <div id="about" data-tab-content>
+            <h1>About</h1>
+            <p>Let me tell you about me</p>
+        </div>
+        <div id="news" data-tab-content>
+            <h1>News</h1>
+            <p>News is great.</p>
+        </div>
+    </div>
+
+    <button id="add-tab">Créer une catégorie</button>
+
+    <script>
+        const addTabButton = document.getElementById('add-tab');
+        let tabs = document.querySelectorAll('[data-tab-target]');
+        let tabContents = document.querySelectorAll('[data-tab-content]');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = document.querySelector(tab.dataset.tabTarget);
+                tabContents.forEach(tabContent => {
+                    tabContent.classList.remove('active');
+                });
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                tab.classList.add('active');
+                target.classList.add('active');
+            });
+        });
+
+        addTabButton.addEventListener('click', () => {
+            const newTabName = prompt("Entrez le nom de la nouvelle catégorie");
+            if (newTabName) {
+                const newTabId = newTabName.replace(/\s+/g, '-').toLowerCase();
+                const newTabContent = document.createElement('div');
+                newTabContent.setAttribute('data-tab-content', '');
+                newTabContent.setAttribute('id', newTabId);
+                newTabContent.innerHTML = `
+      <h1>${newTabName}</h1>
+      <p>This is the new tab content</p>
+    `;
+                document.querySelector('.tab-content').appendChild(newTabContent);
+                const newTab = document.createElement('li');
+                newTab.setAttribute('data-tab-target', `#${newTabId}`);
+                newTab.classList.add('tab');
+                newTab.innerText = newTabName;
+                const tabsContainer = document.querySelector('.tabs');
+                tabsContainer.insertBefore(newTab, tabsContainer.lastElementChild.nextSibling);
+                tabs = document.querySelectorAll('[data-tab-target]');
+                tabContents = document.querySelectorAll('[data-tab-content]');
+
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const target = document.querySelector(tab.dataset.tabTarget);
+                        tabContents.forEach(tabContent => {
+                            tabContent.classList.remove('active');
+                        });
+                        tabs.forEach(tab => {
+                            tab.classList.remove('active');
+                        });
+                        tab.classList.add('active');
+                        target.classList.add('active');
+                    });
+                });
+            }
+        });
+
+    </script>
