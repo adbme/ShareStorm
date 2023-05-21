@@ -93,7 +93,19 @@
         </div>
     </div>
 </div>
-
+<style>
+    input[type="text"],
+    select,
+    input[type="color"],
+    input[type="file"] {
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        margin-bottom: 10px;
+        font-size: 16px;
+        width: 100%;
+    }
+</style>
 
 
 <div id="container"></div>

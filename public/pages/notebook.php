@@ -31,6 +31,11 @@
                 </a>
 
                 <div class="buttondiv">
+
+                    <h5 class="top">FILTER NOTES BY NAME</h5>
+                    <input type="text" id="search-input" placeholder="Search...">
+
+
                     <!-- contenu de la sidebar -->
                     <button type="button" class="button-notes button-createNotes" id="add-tab">
                         <img src="../images/new-category.svg" class="icon-button" alt=""> NEW CATEGORYS
@@ -40,9 +45,6 @@
                         <img src="../images/new-note.svg" class="icon-button" alt=""> NEW NOTES
                     </button>
                 </div>
-
-                <h5 class="top">FILTER NOTES BY NAME</h5>
-                <input type="text" id="search-input" placeholder="Rechercher...">
 
                 <label for="checkbox">hide memnu</label>
                 <input type="checkbox" id="checkbox" onchange="toggleDivVisibility()">

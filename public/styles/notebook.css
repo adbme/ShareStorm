@@ -15,7 +15,34 @@
 }
 
 
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    font-size: 16px;
+    background-image: url('../images/search.svg');
+    background-size: 30px;
+    background-color: #756882;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    color: #000000;
+}
 
+input[type=text]:focus {
+    width: 100%;
+}
+
+input[type=text]::placeholder {
+    color: #000000;
+    /* Remplacez #FF0000 par la couleur de votre choix */
+}
+
+.buttondiv {
+    padding: 10px;
+}
 
 .button2-menu {
     z-index: 2;
@@ -86,6 +113,16 @@ main {
     #sidebar a {
         font-size: 18px;
     }
+
+    input[type=text]::placeholder {
+        font-size: 0px;
+    }
+
+    input[type=text] {
+        width: 10%;
+    }
+
+
 }
 
 
@@ -195,7 +232,14 @@ li.tab {
         font-size: 15px;
         float: right;
     }
+
+
+    h5.top {
+        display: none;
+    }
 }
+
+
 
 .tab {
     cursor: pointer;
@@ -232,4 +276,17 @@ li.tab {
     color: #000000;
     font-weight: bold;
     text-shadow: 1px 1px 1px #000000;
+}
+
+
+
+@media (max-width: 750px) {
+    input[type=text]::placeholder {
+        font-size: 0px;
+    }
+
+    input[type=text] {
+        width: 100%;
+    }
+
 }
