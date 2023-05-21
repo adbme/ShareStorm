@@ -55,10 +55,11 @@
                         <select id="categorie" name="categorie">
                             <option value="">Choisir une catégorie</option>
                         </select>
-                        <label for="image">Image :</label>
+                        <label for="image">IMAGE</label>
+                        <label for="image">a) upload local :</label>
                         <input type="file" id="image" name="image" onchange="previewImage()">
 
-                        <label for="photoLink">Lien de l'image :</label>
+                        <label for="photoLink">b) upload par url :</label>
                         <input type="text" id="photoLink">
                         <button type="button" onclick="upload()">Upload</button>
 

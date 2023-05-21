@@ -172,7 +172,7 @@
     </div>
 
     <div class="col-lg-6 col-md-6 mb-4 sr">
-      <a href="pages/motiv-storm.php">
+      <a href="pages/notebook.php">
         <div class="card text-center bg-dark">
           <div class="card-body d-flex align-items-center justify-content-center img-4 ">
 

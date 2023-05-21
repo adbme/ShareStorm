@@ -1,0 +1,235 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s
+}
+
+.button-menu {
+    font-size: 20px;
+    height: 120px;
+    margin-top: 0vh;
+    margin-left: -20px;
+    background-color: #0066cc;
+
+}
+
+
+
+
+.button2-menu {
+    z-index: 2;
+    font-size: 20px;
+    position: absolute;
+    height: 120px;
+    margin-top: -9px;
+    background-color: #0066cc;
+}
+
+#sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    background-color: #1E1E1E;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+#sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+main {
+    transition: margin-right .5s;
+    padding: 20px;
+    height: 600px;
+    width: 100%;
+    margin-top: -120px;
+    padding-left: 70px;
+}
+
+
+@media screen and (max-width: 1700px) {
+    main {
+        margin-top: -120px;
+
+
+    }
+}
+
+
+
+@media screen and (max-height: 450px) {
+    #sidebar {
+        padding-top: 15px;
+    }
+
+    #sidebar a {
+        font-size: 18px;
+    }
+}
+
+
+/* notebook */
+
+[data-tab-content] {
+    display: none;
+}
+
+ul.tabs {
+    padding: 20px;
+    color: white;
+
+}
+
+.active[data-tab-content] {
+    height: 80vh;
+    display: block;
+    background-color: #312B36;
+    padding: 30px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #29252D;
+    color: white;
+}
+
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid black;
+    overflow-x: auto;
+    flex-wrap: auto;
+
+    /* Styles de personnalisation de la barre de défilement */
+    scrollbar-width: thin;
+    scrollbar-color: #707070 #1f1f1f;
+}
+
+.tabs::-webkit-scrollbar {
+    width: 8px;
+    background-color: #1f1f1f;
+}
+
+.tabs::-webkit-scrollbar-thumb {
+    background-color: #707070;
+}
+
+.tabs::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+}
+
+.tabs::-webkit-scrollbar-track {
+    background-color: #1f1f1f;
+}
+
+
+li.tab {
+    color: #737373;
+    font-size: 20px;
+    margin-left: 10%;
+}
+
+.note-count {
+    background-color: red;
+    color: white;
+    border-radius: 100px;
+    padding: 0px 8px;
+    position: relative;
+    margin-top: -20px;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+    .tabs {
+        display: block;
+        overflow: none;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        max-height: 190px;
+    }
+
+    ul.tabs {
+        background-color: #1E1E1E;
+        padding: 15px;
+    }
+
+    li.tab {
+
+        margin-left: 0;
+    }
+
+    .active[data-tab-content] {
+        height: 60vh;
+        width: 100%;
+
+    }
+
+    .note-count {
+        position: relative;
+        margin-top: 0;
+        font-size: 15px;
+        float: right;
+    }
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.tab.active {
+    border-bottom: 3px white solid;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 0.5px #ffffff;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+.tab:hover {
+    background-color: #363636;
+    color: white;
+}
+
+.tab-content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* note div */
+
+.noteDiv {
+    background-color: #9B8EA6;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000000;
+}

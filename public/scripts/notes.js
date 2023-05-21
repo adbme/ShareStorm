@@ -22,7 +22,7 @@ function creerCategorie() {
     categorie.style.backgroundColor = couleurCategorie;
     categorie.style.marginTop = "10px";
     categorie.style.padding = "10px";
-    categorie.style.opacity = "0.5";
+    // categorie.style.opacity = "0.5";
     categorie.style.transition = "0.5s";
     categorie.style.color = "#E0E0E0";
 
@@ -34,7 +34,8 @@ function creerCategorie() {
     });
 
     categorie.addEventListener("mouseleave", function () { // changement de "mouseout" à "mouseleave"
-        categorie.style.opacity = "0.5";
+        // categorie.style.opacity = "0.5";
+        categorie.style.opacity = "1";
         categorie.style.color = "#E0E0E0";
         categorie.style.backgroundColor = couleurCategorie; // la couleur est restaurée
         barre.style.backgroundColor = "#E0E0E0";

@@ -155,3 +155,6 @@ function confirmCheck() {
         checkAllTasks();
     }
 }
+
+
+console.log(localStorage)

@@ -210,7 +210,9 @@ div.categorie {
 
 }
 
-
+.top {
+    margin-top: 40px;
+}
 
 
 .button-notes {
@@ -265,9 +267,6 @@ div.categorie {
 
 }
 
-.button-createCathegory {}
-
-.button-createNotes {}
 
 
 .h1-notes {
