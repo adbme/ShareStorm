@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mon système de notes</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="notes-container">
+        <div id="toolbar">
+            <button id="btnAddNote">Ajouter une note</button>
+        </div>
+        <div id="notes"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    #notes-container {
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    #toolbar {
+        margin-bottom: 10px;
+    }
+
+    #notes {
+        border: 1px solid #ccc;
+        min-height: 200px;
+        padding: 10px;
+    }
+
+    .note {
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const notesContainer = document.getElementById('notes');
+        const btnAddNote = document.getElementById('btnAddNote');
+
+        btnAddNote.addEventListener('click', function () {
+            createNote();
+        });
+
+        function createNote() {
+            const note = document.createElement('div');
+            note.classList.add('note');
+
+            const textarea = document.createElement('textarea');
+            note.appendChild(textarea);
+
+            notesContainer.appendChild(note);
+        }
+    });
+
+</script>
