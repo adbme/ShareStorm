@@ -64,7 +64,11 @@
                         </table>
                     </div>
 
-
+                    <div id="popup" class="popup">
+                        <div class="popup-content">
+                            <?php require "tools/pop-up-calendar.php" ?>
+                        </div>
+                    </div>
 
                 </div>
 
