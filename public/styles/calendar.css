@@ -162,6 +162,7 @@ body {
 #month-year {
     font-size: 24px;
     margin-bottom: 10px;
+    color: white
 }
 
 table {
@@ -180,9 +181,6 @@ th {
     color: white;
 }
 
-#month-year {
-    color: white;
-}
 
 .button {
     margin-top: -10px;
@@ -242,6 +240,12 @@ button {
     background-color: #FFA0A0;
 }
 
+@media (max-width: 1000px) {
+    td {
+        padding: 20px;
+    }
+}
+
 @media (max-width: 600px) {
     td {
         padding: 15px;
@@ -251,5 +255,13 @@ button {
 @media (max-width: 480px) {
     .calendar {
         margin-top: 100px;
+    }
+
+    td {
+        padding: 15px 5px;
+    }
+
+    td.empty-cell {
+        font-size: 0px;
     }
 }

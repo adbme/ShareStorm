@@ -105,3 +105,24 @@ function nextMonth() {
 
 
 generateCalendar();
+
+
+var joursSemaine = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+var nouveauxNoms = ["D", "L", "M", "M", "J", "V", "S"];
+function updateDayNames() {
+    var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    var dayNameElements = document.querySelectorAll("th");
+    if (windowWidth < 527) {
+        for (var i = 0; i < dayNameElements.length; i++) {
+            dayNameElements[i].textContent = nouveauxNoms[i];
+        }
+    } else {
+        for (var i = 0; i < dayNameElements.length; i++) {
+            dayNameElements[i].textContent = joursSemaine[i];
+        }
+    }
+}
+
+window.addEventListener("load", updateDayNames);
+window.addEventListener("resize", updateDayNames);
