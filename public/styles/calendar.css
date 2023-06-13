@@ -1,3 +1,7 @@
+* {
+    transition: 0.3s;
+}
+
 .button-menu {
     font-size: 20px;
     height: 120px;
@@ -50,7 +54,6 @@
 
 
 main {
-
     transition: margin-right .5s;
     padding: 20px;
     height: 600px;
@@ -96,6 +99,7 @@ body {
 .container {
     display: flex;
     height: 100%;
+    margin-top: 20px;
 }
 
 .calendar {
@@ -151,7 +155,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 100px;
 }
 
 .leftButton {
@@ -209,6 +213,7 @@ td {
 
 td:hover {
     background-color: #1b181f;
+    color: rgb(253, 224, 80);
 }
 
 button {
@@ -218,6 +223,7 @@ button {
 
 .current-day {
     background-color: #FFE888;
+    color: #17151A;
 }
 
 .current-day:hover {
@@ -232,12 +238,14 @@ button {
 
 .empty-cell {
     background-color: #FFA0A0;
-    color: #535353;
+    color: #d18585;
     text-align: center;
+    cursor: auto;
 }
 
 .empty-cell:hover {
     background-color: #FFA0A0;
+    color: #d18585;
 }
 
 @media (max-width: 1000px) {
@@ -253,8 +261,14 @@ button {
 }
 
 @media (max-width: 480px) {
-    .calendar {
-        margin-top: 100px;
+    .buttonDiv {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .title {
+        margin-top: 30px;
+        flex-direction: column;
     }
 
     td {
@@ -264,4 +278,16 @@ button {
     td.empty-cell {
         font-size: 0px;
     }
+}
+
+@media (max-width: 380px) {
+    main {
+        transition: margin-right .5s;
+        padding: 0px;
+
+        margin-left: 0%;
+
+    }
+
+
 }

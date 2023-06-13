@@ -44,8 +44,10 @@
                     <div class="calendar">
                         <div class="title">
                             <h1 id="selected-date">date</h1>
-                            <button class="leftButton button" onclick="previousMonth()">&#8249;</button>
-                            <button class="button" onclick="nextMonth()">&#8250;</button>
+                            <div class="buttonDiv">
+                                <button class="leftButton button" onclick="previousMonth()">&#8249;</button>
+                                <button class="button" onclick="nextMonth()">&#8250;</button>
+                            </div>
                         </div>
                         <h1 id="month-year"></h1>
                         <table>
