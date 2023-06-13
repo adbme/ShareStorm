@@ -172,7 +172,8 @@ table {
 
 th {
     padding: 10px;
-    background-color: #FFE455;
+    background-color: #FFE973;
+    border: 5px #29252D solid;
 }
 
 #selected-date {
@@ -183,16 +184,33 @@ th {
     color: white;
 }
 
+.button {
+    margin-top: -10px;
+    background-color: #FFE888;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 0px 20px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
 td {
     color: white;
+    background-color: #17151A;
     padding: 40px;
     cursor: pointer;
     transition: 0.3s;
-    border: 1px black solid;
+    border: 5px #29252D solid;
 }
 
 td:hover {
-    background-color: #e6e6e6;
+    background-color: #1b181f;
 }
 
 button {
@@ -227,5 +245,11 @@ button {
 @media (max-width: 600px) {
     td {
         padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar {
+        margin-top: 100px;
     }
 }

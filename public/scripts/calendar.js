@@ -102,13 +102,6 @@ function nextMonth() {
     generateCalendar();
 }
 
-function openPopup(dateString) {
-    document.getElementById("popup-date").innerText = dateString;
-    document.getElementById("popup").style.display = "block";
-}
 
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-}
 
 generateCalendar();
