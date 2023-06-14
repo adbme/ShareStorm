@@ -55,10 +55,6 @@ function generateCalendar() {
                     cell.classList.add("current-day");
                 }
 
-                // Ajouter un identifiant unique pour chaque jour
-                let dayId = "day-" + currentYear + "-" + currentMonth + "-" + date;
-                cell.setAttribute("id", dayId);
-
                 cell.addEventListener("click", function () {
                     let selectedDate = new Date(
                         currentYear,
@@ -69,17 +65,22 @@ function generateCalendar() {
                     let selectedMonth = months[selectedDate.getMonth()];
                     let selectedYear = selectedDate.getFullYear();
                     let selectedDateString =
-                        selectedDay + " " + selectedMonth + " " + selectedYear;
+                        selectedDay +
+                        " " +
+                        selectedMonth +
+                        " " +
+                        selectedYear;
 
-                    document.getElementById("selected-date").innerText =
-                        selectedDateString;
+                    document.getElementById(
+                        "selected-date"
+                    ).innerText = selectedDateString;
 
-                    // Mettre à jour l'URL de la page avec la date sélectionnée
-                    window.history.pushState(
-                        {},
-                        "",
-                        window.location.pathname + "#" + dayId
-                    );
+                    // Mettre à jour l'URL avec l'ID du jour sélectionné
+                    let selectedDayId = selectedDay.toString().padStart(2, "0");
+                    let selectedMonthId = (selectedDate.getMonth() + 1).toString().padStart(2, "0");
+                    let selectedYearId = selectedYear.toString();
+                    let url = `?date=${selectedYearId}-${selectedMonthId}-${selectedDayId}`;
+                    history.pushState({}, "", url);
 
                     openPopup(selectedDateString);
                 });
@@ -96,36 +97,19 @@ function generateCalendar() {
     ).innerText = currentDate.getDate() + " " + months[currentDate.getMonth()] + " " + currentDate.getFullYear();
 }
 
-// Fonction pour récupérer la date à partir de l'URL et afficher le jour correspondant
-function displayDayFromUrl() {
-    let hash = window.location.hash;
-    if (hash) {
-        let dayId = hash.substring(1);
-        let selectedDayElement = document.getElementById(dayId);
-        if (selectedDayElement) {
-            let selectedDate = new Date(
-                currentYear,
-                currentMonth,
-                selectedDayElement.innerText
-            );
-            let selectedDay = selectedDate.getDate();
-            let selectedMonth = months[selectedDate.getMonth()];
-            let selectedYear = selectedDate.getFullYear();
-            let selectedDateString =
-                selectedDay + " " + selectedMonth + " " + selectedYear;
-
-            document.getElementById("selected-date").innerText = selectedDateString;
-
-            openPopup(selectedDateString);
-        }
-    }
+function previousMonth() {
+    currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
+    currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+    generateCalendar();
 }
 
-// Écouter l'événement "popstate" pour détecter les changements d'URL
-window.addEventListener("popstate", displayDayFromUrl);
+function nextMonth() {
+    currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
+    currentMonth = currentMonth === 11 ? 0 : currentMonth + 1;
+    generateCalendar();
+}
 
 generateCalendar();
-displayDayFromUrl();
 
 var joursSemaine = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
 var nouveauxNoms = ["D", "L", "M", "M", "J", "V", "S"];

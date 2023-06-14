@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calendrier avec Todos</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Calendrier avec Todos</h1>
+    <div id="calendar"></div>
+
+    <div id="todos">
+        <h2>Todos pour le <span id="selected-date"></span>:</h2>
+        <ul id="todo-list"></ul>
+        <input type="text" id="todo-input" placeholder="Ajouter une todo">
+        <button id="add-button">Ajouter</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 20px;
+    }
+
+    #calendar {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #calendar .day {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    #calendar .day:hover {
+        background-color: #eee;
+    }
+
+    #calendar .selected {
+        background-color: #ffcc00;
+        color: white;
+    }
+
+    #todos {
+        margin-top: 20px;
+    }
+
+    #todos h2 {
+        margin-bottom: 10px;
+    }
+
+    #todo-input {
+        width: 200px;
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    #add-button {
+        padding: 5px 10px;
+    }
+
+    #todo-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    #todo-list li {
+        margin-bottom: 5px;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var calendar = document.getElementById("calendar");
+        var todoList = document.getElementById("todo-list");
+        var todoInput = document.getElementById("todo-input");
+        var addButton = document.getElementById("add-button");
+        var selectedDate = document.getElementById("selected-date");
+
+        var todos = {};
+
+        // Fonction pour ajouter une todo
+        function addTodo() {
+            var date = selectedDate.innerText;
+            var todo = todoInput.value;
+
+            if (date in todos) {
+                todos[date].push(todo);
+            } else {
+                todos[date] = [todo];
+            }
+
+            var todoItem = document.createElement("li");
+            todoItem.innerText = todo;
+            todoList.appendChild(todoItem);
+
+            todoInput.value = "";
+        }
+
+        // Fonction pour afficher les todos d'une date sélectionnée
+        function showTodos(date) {
+            selectedDate.innerText = date;
+            todoList.innerHTML = "";
+
+            if (date in todos) {
+                todos[date].forEach(function (todo) {
+                    var todoItem = document.createElement("li");
+                    todoItem.innerText = todo;
+                    todoList.appendChild(todoItem);
+                });
+            }
+        }
+
+        // Générer le calendrier
+        var today = new Date();
+        var currentMonth = today.getMonth();
+        var currentYear = today.getFullYear();
+
+        function generateCalendar(month, year) {
+            var calendarHTML = "";
+            var daysInMonth = new Date(year, month + 1, 0).getDate();
+            var firstDay = new Date(year, month, 1).getDay();
+
+            var weekdays = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+
+            calendarHTML += "<div class='row'>";
+            weekdays.forEach(function (weekday) {
+                calendarHTML += "<div class='day'>" + weekday + "</div>";
+            });
+            calendarHTML += "</div>";
+
+            var date = 1;
+
+            for (var i = 0; i < 6; i++) {
+                calendarHTML += "<div class='row'>";
+
+                for (var j = 0; j < 7; j++) {
+                    if (i === 0 && j < firstDay) {
+                        calendarHTML += "<div class='day'></div>";
+                    } else if (date > daysInMonth) {
+                        break;
+                    } else {
+                        var dateString = ("0" + date).slice(-2) + "-" + ("0" + (month + 1)).slice(-2) + "-" + year;
+                        calendarHTML += "<div class='day' data-date='" + dateString + "'>" + date + "</div>";
+                        date++;
+                    }
+                }
+
+                calendarHTML += "</div>";
+
+                if (date > daysInMonth) {
+                    break;
+                }
+            }
+
+            calendar.innerHTML = calendarHTML;
+
+            // Ajouter des écouteurs d'événements aux jours du calendrier
+            var days = document.getElementsByClassName("day");
+            for (var k = 0; k < days.length; k++) {
+                days[k].addEventListener("click", function () {
+                    var selectedDay = this.getAttribute("data-date");
+                    showTodos(selectedDay);
+
+                    // Mettre en surbrillance le jour sélectionné
+                    var selectedDayElement = document.querySelector(".selected");
+                    if (selectedDayElement) {
+                        selectedDayElement.classList.remove("selected");
+                    }
+                    this.classList.add("selected");
+                });
+            }
+        }
+
+        generateCalendar(currentMonth, currentYear);
+
+        addButton.addEventListener("click", addTodo);
+    });
+
+</script>

@@ -11,11 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../styles/calendar.css">
 
     <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
-
-
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -24,26 +19,15 @@
             <div class="col-md-2">
                 <button class="btn btn-primary button-menu" onclick="openNav()">></button>
                 <div id="sidebar">
-
-
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
-
                         <button class="btn btn-primary button2-menu" onclick="closeNav()">
                             < </button>
-
-
-
-
                     </a>
                     <!-- contenu -->
-                    <?php require "tools/pop-up-calendar.php" ?>
-
-
+                    <button class="btn btn-primary" onclick="addTask()">Ajouter une tâche</button>
+                    <div id="task-container"></div>
                 </div>
-
             </div>
-
-
             <main id="main">
                 <div class="container">
                     <div class="calendar">
@@ -70,16 +54,8 @@
                             <tbody id="calendar-body"></tbody>
                         </table>
                     </div>
-
-
-
                 </div>
-
             </main>
-
-
-
-
         </div>
     </div>
 
@@ -94,11 +70,11 @@
             document.getElementById("sidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "10%";
             document.getElementById("main").style.marginTop = "-120";
-            // document.getElementById("main").style.marginLeft = "12%";
         }
-    </script>
 
-    <script src="../scripts/calendar.js"> </script>
+
+    </script>
+    <script src="../scripts/calendar.js"></script>
 </body>
 
 </html>
