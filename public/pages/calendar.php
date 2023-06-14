@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+    <title>Calendar</title>
     <link rel="stylesheet" type="text/css" href="../styles/calendar.css">
 
     <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
@@ -25,13 +25,18 @@
                 <button class="btn btn-primary button-menu" onclick="openNav()">></button>
                 <div id="sidebar">
 
+
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
 
                         <button class="btn btn-primary button2-menu" onclick="closeNav()">
                             < </button>
 
+
+
+
                     </a>
                     <!-- contenu -->
+                    <?php require "tools/pop-up-calendar.php" ?>
 
 
                 </div>
@@ -77,6 +82,7 @@
 
         </div>
     </div>
+
     <script>
         function openNav() {
             document.getElementById("sidebar").style.width = "20%";
@@ -91,9 +97,8 @@
             // document.getElementById("main").style.marginLeft = "12%";
         }
     </script>
-    <script src="../scripts/calendar.js">
 
-    </script>
+    <script src="../scripts/calendar.js"> </script>
 </body>
 
 </html>
